@@ -1,0 +1,293 @@
+# Dual Mask
+
+```{r setup, message = FALSE, warning = FALSE, echo = FALSE, cache = FALSE}
+library(knitr)
+opts_chunk$set(cache = FALSE, cache.path = "dualmask.cache/", 
+               warning = FALSE, message = FALSE,
+               tidy = TRUE, tidy.opts = list(width.cutoff = 100))
+
+knit_hooks$set(htmlcap = function(before, options, envir) {
+  if(!before) {
+    paste('<p class="caption" align="left"><strong>Figure</strong>: ',options$htmlcap,"</p>",sep="")
+  }
+})
+
+library(dplyr)
+library(lme4)
+library(reshape2)
+library(AICcmodavg)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(scales)
+library(RColorBrewer)
+
+source("./helper/report-stats.R")       # formatting lmer model output
+source("./helper/within-subj-error.R")  # calculating within-subject error
+```
+
+```{r load-data, echo = 1, eval = 1}
+df <- read.csv("./dualmask/dualmask-final.csv", stringsAsFactors = FALSE)
+df <- filter(df, subj_id != "MWP205a")
+```
+
+# Mean response time and error rate for each subject
+
+```{r subj-means, echo = FALSE, fig.width = 6, fig.height = 6, fig.show = 'hold', fig.align = 'center', htmlcap = "Detect outlier subjects using by subject mean response times and error rates."}
+subjs <- df %.% 
+  group_by(subj_id) %.% 
+  summarize(
+    rt = mean(rt, na.rm = T),
+    err = mean(is_error, na.rm = T)
+  ) %.% 
+  mutate(
+    rank_rt = rank(rt, ties.method = "random"),
+    rank_err = rank(err, ties.method = "random")
+  )
+
+ggplot(subjs, aes(x = rank_rt, y = rt, label = subj_id, color = subj_id)) +
+  geom_point() +
+  geom_text(hjust = 0, vjust = -0.5, angle = 45, size = 4) +
+  coord_cartesian(xlim = c(0.5, 27), ylim = c(300, 850)) +
+  scale_x_continuous("Subject (Ranked by RT)", breaks = c(1, seq(5, 25, by = 5))) +
+  scale_y_continuous("Average RT (ms)") +
+  theme(legend.position = "none")
+
+ggplot(subjs, aes(x = rank_err, y = err, label = subj_id, color = subj_id)) +
+  geom_point() +
+  geom_text(hjust = 0, vjust = -0.5, angle = 45, size = 4) +
+  coord_cartesian(xlim = c(0.5, 27), ylim = c(0.0, .1)) +
+  scale_x_continuous("Subject (Ranked by Errors)", breaks = c(1, seq(5, 25, by = 5))) +
+  scale_y_continuous("Error Rate", label = percent, breaks = seq(0,1,by=0.02)) +
+  theme(legend.position = "none")
+```
+
+```{r remove-bad-subj}
+df <- filter(df, subj_id != "MWP205a") # slow response times and low accuracy
+```
+
+# Overall response time and error rate by condition
+
+```{r means, echo = FALSE}
+df_agg <- df %.% 
+  group_by(subj_id, cue_type, mask_type) %.%
+  summarize(
+    rt = mean(rt, na.rm = TRUE),
+    err = mean(is_error, na.rm = TRUE)
+  ) %.% ungroup()
+
+df_agg %.% 
+  group_by(cue_type, mask_type) %.%
+  summarize(
+    rt = mean(rt),
+    err = mean(err)
+  ) %.% 
+  arrange(rev(mask_type), cue_type)
+```
+
+# Cueing effect without mask
+
+```{r cueing-nomask, echo = c(1, 4)}
+df_nomask <- filter(df, mask_type == "nomask")
+arrange(unique(df_nomask[, c("cue_type", "cue_l", "cue_q", "mask_type")]), cue_type)
+
+mod_nomask_rt <- lmerTest::lmer(rt ~ cue_l + cue_q + (1|subj_id), data = df_nomask)
+summarize_lmerTest(mod_nomask_rt, vars = c("cue_l", "cue_q"))
+```
+
+# Effect of mask on cueing effect
+
+```{r mask-on-cueing, echo = 3}
+arrange(unique(df[,c("cue_type", "cue_l", "cue_q", "mask_type", "mask_c")]), mask_c, cue_type)
+
+mod_cueing_rt <- lmerTest::lmer(rt ~ (cue_l + cue_q) * mask_c + (1|subj_id), data = df)
+summarize_lmerTest(mod_cueing_rt, vars = c("cue_l", "cue_q", "mask_c", "cue_l:mask_c", "cue_q:mask_c"))
+```
+
+# Effect of mask on baseline performance
+
+```{r mask-on-noise, echo = c(1, 4, 7)}
+df_noise <- filter(df, cue_type == "noise")
+arrange(unique(df_noise[,c("cue_type", "mask_type", "mask_c")]), mask_type)
+
+mod_noise_rt <- lmerTest::lmer(rt ~ mask_c + (1|subj_id), data = df_noise)
+summarize_lmerTest(mod_noise_rt, vars = "mask_c")
+
+mod_noise_err <- glmer(is_error ~ mask_c + (1|subj_id), data = df_noise, family = binomial)
+summarize_glmer(mod_noise_err, vars = "mask_c")
+```
+
+# Plot
+
+```{r dualmask-plot, echo = FALSE, fig.width = 10, fig.height = 10, fig.show = 'hold', fig.align = 'center', htmlcap = "Results of Experiment 1A."}
+inv_noise_val <- c("#7570b3", "#969696", "#1b9e77")
+nointer_inter <- c("#92c5de", "#ca0020")
+nointer_inter2 <- c(nointer_inter, nointer_inter[2])
+
+# ------------------------------------------------------------------------------
+# source("./figure/base_theme.R")
+base_theme <- theme(
+  text = element_text(family = "Helvetica", color = 'black', size = 8),
+  line = element_line(color = 'black', size = 0.3),
+  panel.background = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  axis.line = element_line(color = 'black'),
+  axis.text = element_text(color = 'black', size = 8),
+  axis.title = element_text(vjust = 0.3, size = 8),
+  axis.ticks.x = element_line(color = 'black'),
+  axis.ticks.y = element_line(color = 'black'),
+  axis.ticks.length = unit(4, 'points'),
+  legend.direction = "vertical",
+  legend.background = element_blank(),
+  legend.key = element_blank(),
+  legend.text = element_text(size = 8),
+  legend.title = element_text(size = 8, face = "plain"),
+  legend.key.size = unit(10, units = "points"),
+  plot.margin = unit(c(0.2,0,0,0), units = "in")
+)
+
+# ------------------------------------------------------------------------------
+
+df_dualmask <- read.csv("./dualmask/dualmask-final.csv", stringsAsFactors = FALSE)
+df_dualmask <- filter(df_dualmask, subj_id != "MWP205a")
+
+# ------------------------------------------------------------------------------
+# RT estimates
+
+mod <- lmer(rt ~ (cue_l + cue_q) * mask_c + (1|subj_id), data = df_dualmask)
+x_preds <- unique(df_dualmask[,c("cue_type", "cue_l", "cue_q", "mask_type", "mask_c")])
+y_preds <- predictSE(mod, x_preds, type = "response", se.fit = TRUE)
+rt_mean_se <- cbind(x_preds, y_preds) %.%
+  mutate(
+    cue_type = factor(cue_type, levels = c("invalid", "noise", "valid")),
+    mask_type = factor(mask_type, levels = c("nomask", "mask"))
+  ) %.%
+  select(cue_type, mask_type, rt = fit, mean_se = se.fit) %.%
+  arrange(mask_type, cue_type)
+
+rt_diff_se <- df_dualmask %.%
+  summarySEwithin(measurevar = "rt", na.rm = TRUE, idvar = "subj_id",
+                  withinvars = c("mask_type", "cue_type")) %.%
+  mutate(
+    mask_type = factor(mask_type, levels = c("nomask", "mask")),
+    cue_type = factor(cue_type, levels = c("invalid", "noise", "valid"))
+  ) %.% 
+  select(mask_type, cue_type, diff_se = se) %.%
+  arrange(mask_type, cue_type)
+
+rt_means <- merge(rt_mean_se, rt_diff_se)
+
+cue_type_dodge = position_dodge(width = 0.12)
+dualmask_means_plot <- ggplot(rt_means, aes(x = mask_type, y = rt, color = cue_type)) +
+  geom_linerange(aes(group = cue_type, ymin = rt - mean_se, ymax = rt + mean_se), 
+    position = cue_type_dodge, color = "gray", lty = 5, size = 0.2) +
+  geom_errorbar(aes(ymin = rt - diff_se, ymax = rt + diff_se),
+    position = cue_type_dodge, width = 0.1) +
+  geom_point(position = cue_type_dodge,
+    size = 1.8) +
+  geom_line(aes(group = cue_type), position = cue_type_dodge, size = 0.4) +
+  coord_cartesian(ylim = c(440, 560), xlim = c(0.6, 2.35)) +
+  scale_y_continuous("Reaction Time (ms)") +
+  scale_x_discrete("", labels = c("No Interference", "Visual Interference")) +
+  scale_color_manual("", labels = c("Invalid Cue", "Noise Cue", "Valid Cue"), 
+    values = inv_noise_val) +
+  base_theme + theme(
+    legend.position = c(0.72, 0.96),
+    legend.title.align = 0.5
+  )
+dualmask_means_plot
+
+# ------------------------------------------------------------------------------
+# Effect of mask on cueing effect in RTs
+
+get_rt_estimates <- function(lmermod, confint_method = "Wald") {
+  estimates <- summary(lmermod)$coefficients
+  estimates <- as.data.frame(estimates)
+  estimates$param <- row.names(estimates); row.names(estimates) <- NULL
+  
+  intervals <- confint(lmermod, method = confint_method)
+  intervals <- as.data.frame(intervals)
+  intervals$param <- row.names(intervals); row.names(intervals) <- NULL
+  
+  merge(estimates, intervals)
+}
+
+df_dualmask_nomask <- filter(df_dualmask, mask_type == "nomask")
+mod_nomask_rt <- lmer(rt ~ cue_l + cue_q + (1|subj_id), data = df_dualmask_nomask)
+nomask_est <- get_rt_estimates(mod_nomask_rt) %.% mutate(mask_type = "nomask")
+
+df_dualmask_mask <- filter(df_dualmask, mask_type == "mask")
+mod_mask_rt <- lmer(rt ~ cue_l + cue_q + (1|subj_id), data = df_dualmask_mask)
+mask_est <- get_rt_estimates(mod_mask_rt) %.% mutate(mask_type = "mask")
+
+rt_estimates <- rbind(nomask_est, mask_est) %.%
+  mutate(mask_type = factor(mask_type, levels = c("nomask", "mask"))) %.%
+  plyr::rename(c("Estimate" = "cue_effect", "2.5 %" = "lwr", "97.5 %" = "upr",
+                 "Std. Error" = "se")) %.%
+  filter(param == "cue_l") %.%
+  select(cue_effect, se, lwr, upr, mask_type)
+
+dualmask_cueing_plot <- ggplot(rt_estimates, aes(x = mask_type, y = cue_effect)) + 
+  geom_bar(aes(fill = mask_type), stat = "identity", width = 0.3, color = "black",
+    size = 0.4) +
+  geom_errorbar(aes(ymin = cue_effect - se, ymax = cue_effect + se), size = 0.3,
+    width = 0.08) + 
+  coord_cartesian(ylim = c(0, 80), xlim = c(0.6, 2.35)) +
+  scale_x_discrete("", labels = c("No Interference", "Visual Interference")) +
+  scale_y_continuous("Cueing Effect (ms)", breaks = seq(0, 100, by=20)) +
+  scale_fill_manual(values = nointer_inter) +
+  base_theme +
+  theme(
+    legend.position = "none"
+    # plot.margin = unit(c(-0.14, 0, 0, 0), units = "in")
+  )
+dualmask_cueing_plot
+```
+
+```{r}
+summary(glmer(is_error ~ mask_c + (1|subj_id), data = filter(df, cue_type == "valid"), family = binomial))
+
+acc_mod <- glmer(is_correct ~ (cue_l + cue_q) * mask_c + (1|subj_id), data = df_dualmask, family = binomial)
+x_preds <- unique(df_dualmask[,c("cue_type", "cue_l", "cue_q", "mask_type", "mask_c")])
+y_preds <- predictSE(acc_mod, x_preds, type = "response", se.fit = TRUE)
+acc_mean_se <- cbind(x_preds, y_preds) %.%
+  mutate(
+    cue_type = factor(cue_type, levels = c("invalid", "noise", "valid")),
+    mask_type = factor(mask_type, levels = c("nomask", "mask"))
+  ) %.%
+  select(cue_type, mask_type, acc = fit, mean_se = se.fit) %.%
+  arrange(mask_type, cue_type)
+
+acc_diff_se <- df_dualmask %.%
+  summarySEwithin(measurevar = "is_correct", na.rm = TRUE, idvar = "subj_id",
+                  withinvars = c("mask_type", "cue_type")) %.%
+  mutate(
+    mask_type = factor(mask_type, levels = c("nomask", "mask")),
+    cue_type = factor(cue_type, levels = c("invalid", "noise", "valid"))
+  ) %.% 
+  select(mask_type, cue_type, diff_se = se) %.%
+  arrange(mask_type, cue_type)
+
+acc_means <- merge(acc_mean_se, acc_diff_se)
+
+cue_type_dodge = position_dodge(width = 0.12)
+dualmask_accuracy_plot <- ggplot(acc_means, aes(x = mask_type, y = acc, color = cue_type)) +
+  geom_linerange(aes(group = cue_type, ymin = acc - mean_se, ymax = acc + mean_se), 
+    position = cue_type_dodge, color = "gray", lty = 5, size = 0.2) +
+  geom_errorbar(aes(ymin = acc - diff_se, ymax = acc + diff_se),
+    position = cue_type_dodge, width = 0.1) +
+  geom_point(position = cue_type_dodge,
+    size = 1.8) +
+  geom_line(aes(group = cue_type), position = cue_type_dodge, size = 0.4) +
+  coord_cartesian(ylim = c(0.9, 1.0), xlim = c(0.6, 2.35)) +
+  scale_y_continuous("Accuracy", breaks = seq(0.9, 1.0, by = 0.02), labels = percent) +
+  scale_x_discrete("", labels = c("No Interference", "Visual Interference")) +
+  scale_color_manual("", labels = c("Invalid Cue", "Noise Cue", "Valid Cue"), 
+    values = inv_noise_val) +
+  base_theme + theme(
+    legend.position = c(0.72, 0.96),
+    legend.title.align = 0.5
+  )
+dualmask_accuracy_plot
+```

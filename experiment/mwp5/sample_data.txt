@@ -1,0 +1,5 @@
+test	530	PME 	2014_Apr_25_0936	MWP5	LL-Kramer	-1	-10	noise	-1	1	left	1	noise	-1	1	noise.wav	lion	140	lion.bmp	4.8722833473	left	497.90201115	1
+test	530	PME 	2014_Apr_25_0936	MWP5	LL-Kramer	-1	-9	valid	1	0	left	-1	rabbit	182	4	rabbit_4.wav	rabbit	182	rabbit.bmp	9.79894829565	left	690.002218587	1
+test	530	PME 	2014_Apr_25_0936	MWP5	LL-Kramer	-1	-8	valid	1	1	left	1	dog	73	4	dog_4.wav	dog	73	dog.bmp	14.5967112208	left	646.456229617	1
+test	530	PME 	2014_Apr_25_0936	MWP5	LL-Kramer	-1	-7	noise	-1	1	left	0	noise	-1	1	noise.wav	tomato	236	tomato.bmp	19.4970149329	left	599.981907522	1
+test	530	PME 	2014_Apr_25_0936	MWP5	LL-Kramer	-1	-6	noise	-1	0	right	-1	noise	-1	1	noise.wav	kangaroo	126	kangaroo.bmp	24.3865602381	right	680.78713282	1

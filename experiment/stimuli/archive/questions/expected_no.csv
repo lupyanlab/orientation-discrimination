@@ -1,0 +1,270 @@
+,category,type,id,question,expected,actual
+0,pineapple,nonvisual,1,Is it an animal?,n,n
+1,elephant,nonvisual,2,Is it a reptile?,n,n
+2,carrot,nonvisual,3,Does it live in swamps?,n,n
+3,zebra,nonvisual,4,Does it live in water?,n,n
+4,swan,nonvisual,5,Does it eat people?,n,n
+5,train,visual,1,Is it green?,n,n
+6,pineapple,visual,2,Is it long?,n,n
+7,elephant,visual,3,Does it have scales?,n,n
+8,penguin,visual,4,Does it have a tail?,n,n
+9,zebra,visual,5,Does it have jaws?,n,n
+10,chair,nonvisual,1,Is it a fruit?,n,n
+11,donkey,nonvisual,2,Does it grow on trees?,n,n
+12,dog,nonvisual,3,Is it eaten in pies?,n,n
+13,chair,nonvisual,4,Is it nutritious?,n,n
+14,table,nonvisual,5,Is it used for cider?,n,n
+15,zebra,visual,1,Is it red?,n,n
+16,giraffe,visual,2,Is it green?,n,n
+17,camel,visual,3,Does it have seeds?,n,n
+18,toad,visual,4,Is it round?,n,n
+19,tiger,visual,5,Does it have a core?,n,n
+20,train,nonvisual,1,Is it a fruit?,n,n
+21,lion,nonvisual,2,Does it taste good?,n,n
+22,train,nonvisual,3,Does it grow in tropical climates?,n,n
+23,table,nonvisual,4,Is it healthy?,n,n
+24,deer,visual,1,Is it yellow?,n,n
+25,chair,visual,2,Is it long?,n,n
+26,toad,visual,3,Does it have a peel?,n,n
+27,raccoon,visual,4,Does it have a skin?,n,n
+28,strawberry,nonvisual,1,Is is used for riding?,n,n
+29,pineapple,nonvisual,2,Is it used for racing?,n,n
+30,banana,nonvisual,3,Does it have different speeds?,n,n
+31,apple,nonvisual,4,Is it fast?,n,n
+32,toad,visual,1,Does it have handle bars?,n,n
+33,pineapple,visual,2,Does it have a seat?,n,n
+34,mouse,visual,3,Does it have gears?,n,n
+35,rabbit,visual,4,Is it made of metal?,n,n
+36,carrot,nonvisual,1,Is it used for holding things?,n,n
+37,chicken,nonvisual,2,Is it used for holding liquids?,n,n
+38,banana,nonvisual,3,Is it a container?,n,n
+39,penguin,nonvisual,4,Is it breakable?,n,n
+40,raccoon,nonvisual,5,Is it used for holding beer?,n,n
+41,pig,visual,1,Is it made of glass?,n,n
+42,bike,visual,2,Is it made of plastic?,n,n
+43,deer,visual,3,Does it have a lid?,n,n
+44,table,visual,4,Does it have a neck?,n,n
+45,alligator,visual,5,Does it have a cork?,n,n
+46,donkey,nonvisual,1,Does it live in the desert?,n,n
+47,mouse,nonvisual,2,Does it drink water?,n,n
+48,swan,nonvisual,3,Is it used by riding?,n,n
+49,bike,nonvisual,4,Is it a mammal?,n,n
+50,raccoon,nonvisual,5,Does it spit?,n,n
+51,swan,visual,1,Does it have a hump?,n,n
+52,carrot,visual,2,Is it brown?,n,n
+53,deer,visual,3,Does it have legs?,n,n
+54,mouse,visual,4,Is it large?,n,n
+55,rabbit,visual,5,Is it beige?,n,n
+56,jacket,nonvisual,1,Is it a vegetable?,n,n
+57,zebra,nonvisual,2,Is it eaten by rabbits?,n,n
+58,tiger,nonvisual,3,Does it grow underground?,n,n
+59,chair,nonvisual,4,Is it a root?,n,n
+60,chicken,visual,1,Is it orange?,n,n
+61,dog,visual,2,Does it have a top?,n,n
+62,grasshopper,visual,3,Is it long?,n,n
+63,alligator,visual,4,Does it have a pointed end?,n,n
+64,tiger,nonvisual,1,Is it used for sitting on?,n,n
+65,strawberry,nonvisual,2,Is it furniture?,n,n
+66,elephant,nonvisual,3,Is it comfortable?,n,n
+67,tiger,nonvisual,4,Is it used for relaxing?,n,n
+68,bike,nonvisual,5,Is it found at tables?,n,n
+69,pineapple,visual,1,Does it have legs?,n,n
+70,grasshopper,visual,2,Is it made of wood?,n,n
+71,bottle,visual,3,Does it have armrests?,n,n
+72,rabbit,visual,4,Does it have a seat?,n,n
+73,deer,visual,5,Does it have a cushion?,n,n
+74,donkey,nonvisual,1,Does it lay eggs?,n,n
+75,camel,nonvisual,2,Does it live on a farm?,n,n
+76,giraffe,nonvisual,3,Does it eat grain?,n,n
+77,giraffe,nonvisual,4,Is it eaten by frying?,n,n
+78,camel,nonvisual,5,Does it live in a coop?,n,n
+79,banana,visual,1,Does it have feathers?,n,n
+80,pig,visual,2,Does it have wings?,n,n
+81,apple,visual,3,Does it have a beak?,n,n
+82,apple,visual,4,Does it have legs?,n,n
+83,giraffe,nonvisual,1,Is it hunted by people?,n,n
+84,banana,nonvisual,2,Is it fast?,n,n
+85,chicken,nonvisual,3,Is it a mammal?,n,n
+86,penguin,nonvisual,4,Is it an herbivore?,n,n
+87,apple,nonvisual,5,Is it timid?,n,n
+88,dog,visual,1,Does it have antlers?,n,n
+89,carrot,visual,2,Does it have four legs?,n,n
+90,bottle,visual,3,Does it have eyes?,n,n
+91,train,visual,4,Does it have hooves?,n,n
+92,mouse,visual,5,Does it have a white tail?,n,n
+93,toad,nonvisual,1,Does it bark?,n,n
+94,toad,nonvisual,2,Is it an animal?,n,n
+95,pineapple,nonvisual,3,Is it a pet?,n,n
+96,raccoon,nonvisual,4,Is it used for protection?,n,n
+97,donkey,nonvisual,5,Does it chase cats?,n,n
+98,strawberry,visual,1,Does it have four legs?,n,n
+99,elephant,visual,2,Does it have legs?,n,n
+100,swan,visual,3,Does it have a tail?,n,n
+101,jacket,visual,4,Does it have hair?,n,n
+102,table,visual,5,Does it have a nose?,n,n
+103,table,nonvisual,1,Is it an animal?,n,n
+104,penguin,nonvisual,2,Is it like a horse?,n,n
+105,alligator,nonvisual,3,Is it a mammal?,n,n
+106,toad,nonvisual,4,Is it furry?,n,n
+107,grasshopper,nonvisual,5,Does it make noises?,n,n
+108,bike,visual,1,Does it have legs?,n,n
+109,donkey,visual,2,Does it have four legs?,n,n
+110,grasshopper,visual,3,Does it have a tail?,n,n
+111,banana,visual,4,Does it have hooves?,n,n
+112,bottle,nonvisual,1,Is it an animal?,n,n
+113,jacket,nonvisual,2,Does it live in Africa?,n,n
+114,mouse,nonvisual,3,Does it live in zoos?,n,n
+115,chair,nonvisual,4,Is it used in circuses?,n,n
+116,alligator,nonvisual,5,Does it eat peanuts?,n,n
+117,lion,visual,1,Is it grey?,n,n
+118,camel,visual,2,Does it have ears?,n,n
+119,lion,visual,3,Does it have four legs?,n,n
+120,chicken,visual,4,Does it have a tail?,n,n
+121,tiger,visual,5,Does it have large ears?,n,n
+122,jacket,nonvisual,1,Does it eat leaves?,n,n
+123,bike,nonvisual,2,Does it live in Africa?,n,n
+124,deer,nonvisual,3,Does it live in zoos?,n,n
+125,chicken,nonvisual,4,Is it a mammal?,n,n
+126,rabbit,visual,1,Does it have spots?,n,n
+127,jacket,visual,2,Is it tall?,n,n
+128,lion,visual,3,Does it have long legs?,n,n
+129,tiger,visual,4,Is it brown?,n,n
+130,strawberry,nonvisual,1,Is it an insect?,n,n
+131,giraffe,nonvisual,2,Does it live in grass?,n,n
+132,donkey,nonvisual,3,Is it found in summer?,n,n
+133,bottle,nonvisual,4,Does it fly?,n,n
+134,deer,visual,1,Is it green?,n,n
+135,raccoon,visual,2,Does it have legs?,n,n
+136,train,visual,3,Does it have long legs?,n,n
+137,zebra,visual,4,Does it have antennae?,n,n
+138,pineapple,nonvisual,1,Is it clothing?,n,n
+139,banana,nonvisual,2,Is it worn in cold temperatures?,n,n
+140,tiger,nonvisual,3,Is it worn in winter?,n,n
+141,strawberry,nonvisual,4,Is it worn for the rain?,n,n
+142,train,visual,1,Does it have a zipper?,n,n
+143,apple,visual,2,Does it have pockets?,n,n
+144,apple,visual,3,Does it have a hood?,n,n
+145,bike,visual,4,Does it have sleeves?,n,n
+146,pig,nonvisual,1,Is it an animal?,n,n
+147,bottle,nonvisual,2,Is it a carnivore?,n,n
+148,table,nonvisual,3,Is it a mammal?,n,n
+149,zebra,nonvisual,4,Does it live in jungles?,n,n
+150,table,nonvisual,5,Does it roar?,n,n
+151,raccoon,visual,1,Does it have a mane?,n,n
+152,raccoon,visual,2,Does it have fur?,n,n
+153,penguin,visual,3,Does it have a tail?,n,n
+154,bottle,visual,4,Does it have teeth?,n,n
+155,elephant,nonvisual,1,Is it a rodent?,n,n
+156,apple,nonvisual,2,Is it an animal?,n,n
+157,strawberry,nonvisual,3,Does it eat?,n,n
+158,alligator,nonvisual,4,Is it used in experiments?,n,n
+159,lion,nonvisual,5,Does it eat cheese?,n,n
+160,banana,visual,1,Does it have a tail?,n,n
+161,alligator,visual,2,Is it grey?,n,n
+162,deer,visual,3,Does it have fur?,n,n
+163,camel,visual,4,Does it have whiskers?,n,n
+164,camel,nonvisual,1,Is it a bird?,n,n
+165,camel,nonvisual,2,Is it unable to fly?,n,n
+166,train,nonvisual,3,Does it live in the Arctic?,n,n
+167,rabbit,nonvisual,4,Does it lay eggs?,n,n
+168,lion,nonvisual,5,Does it waddle?,n,n
+169,tiger,visual,1,Is it black?,n,n
+170,train,visual,2,Does it have a beak?,n,n
+171,bike,visual,3,Does it have feet?,n,n
+172,lion,visual,4,Does it have wings?,n,n
+173,dog,nonvisual,1,Is it an animal?,n,n
+174,elephant,nonvisual,2,Does it live on farms?,n,n
+175,dog,nonvisual,3,Is it eaten as bacon?,n,n
+176,deer,nonvisual,4,Is it smelly?,n,n
+177,penguin,nonvisual,5,Does it like mud?,n,n
+178,dog,visual,1,Is it pink?,n,n
+179,strawberry,visual,2,Does it have a tail?,n,n
+180,chair,visual,3,Does it have a snout?,n,n
+181,pig,visual,4,Does it have legs?,n,n
+182,bottle,visual,5,Is it muddy?,n,n
+183,bottle,nonvisual,1,Is it juicy?,n,n
+184,pig,nonvisual,2,Is it tropical?,n,n
+185,swan,nonvisual,3,Does it grow on trees?,n,n
+186,table,nonvisual,4,Does it grow in Hawaii?,n,n
+187,dog,nonvisual,5,Is it prickly?,n,n
+188,chicken,visual,1,Is it yellow?,n,n
+189,giraffe,visual,2,Does it have an inside?,n,n
+190,pig,visual,3,Does it have skin?,n,n
+191,lion,visual,4,Is it yellow inside?,n,n
+192,rabbit,visual,5,Does it have a core?,n,n
+193,raccoon,nonvisual,1,Does it hop?,n,n
+194,pineapple,nonvisual,2,Is it a pet?,n,n
+195,penguin,nonvisual,3,Is it edible?,n,n
+196,tiger,nonvisual,4,Is it hunted by people?,n,n
+197,chicken,nonvisual,5,Does it eat carrots?,n,n
+198,jacket,visual,1,Does it have ears?,n,n
+199,bottle,visual,2,Does it have feet?,n,n
+200,pig,visual,3,Does it have whiskers?,n,n
+201,chair,visual,4,Does it have a tail?,n,n
+202,zebra,nonvisual,1,Does it eat garbage?,n,n
+203,elephant,nonvisual,2,Is it furry?,n,n
+204,bike,nonvisual,3,Is it nocturnal?,n,n
+205,rabbit,nonvisual,4,Does it produce offspring?,n,n
+206,apple,visual,1,Is it black?,n,n
+207,chair,visual,2,Does it have a tail?,n,n
+208,apple,visual,3,Does it have eyes?,n,n
+209,mouse,visual,4,Does it have stripes?,n,n
+210,swan,visual,5,Does it have a mask?,n,n
+211,mouse,nonvisual,1,Is it a fruit?,n,n
+212,tiger,nonvisual,2,Does it taste sweet?,n,n
+213,chicken,nonvisual,3,Is it used for making jam?,n,n
+214,penguin,nonvisual,4,Does it taste good?,n,n
+215,penguin,visual,1,Is it red?,n,n
+216,bottle,visual,2,Does it have seeds?,n,n
+217,donkey,visual,3,Does it have green leaves?,n,n
+218,raccoon,visual,4,Is it small?,n,n
+219,camel,nonvisual,1,Is it graceful?,n,n
+220,pig,nonvisual,2,Is it a bird?,n,n
+221,mouse,nonvisual,3,Does it live on water?,n,n
+222,elephant,nonvisual,4,Does it lay eggs?,n,n
+223,carrot,visual,1,Does it have a long neck?,n,n
+224,banana,visual,2,Does it have a beak?,n,n
+225,pig,visual,3,Does it have feathers?,n,n
+226,carrot,visual,4,Does it have wings?,n,n
+227,zebra,nonvisual,1,Is it used for eating on?,n,n
+228,lion,nonvisual,2,Is it found in kitchens?,n,n
+229,swan,nonvisual,3,Is it found in dining rooms?,n,n
+230,donkey,nonvisual,4,Is it furniture?,n,n
+231,elephant,visual,1,Is it made of wood?,n,n
+232,alligator,visual,2,Is it round?,n,n
+233,dog,visual,3,Does it have legs?,n,n
+234,rabbit,visual,4,Is it flat?,n,n
+235,pineapple,nonvisual,1,Is it a carnivore?,n,n
+236,elephant,nonvisual,2,Is it an animal?,n,n
+237,carrot,nonvisual,3,Does it live in Africa?,n,n
+238,rabbit,nonvisual,4,Does it live in zoos?,n,n
+239,pig,nonvisual,5,Does it live in India?,n,n
+240,camel,visual,1,Does it have stripes?,n,n
+241,grasshopper,visual,2,Does it have teeth?,n,n
+242,chair,visual,3,Is it orange?,n,n
+243,pineapple,visual,4,Does it have whiskers?,n,n
+244,deer,visual,5,Does it have large teeth?,n,n
+245,camel,nonvisual,1,Does it eat?,n,n
+246,dog,nonvisual,2,Does it hop?,n,n
+247,strawberry,nonvisual,3,Is it an amphibian?,n,n
+248,giraffe,nonvisual,4,Does it eat insects?,n,n
+249,jacket,visual,1,Is it green?,n,n
+250,giraffe,visual,2,Does it have warts?,n,n
+251,alligator,visual,3,Is it small?,n,n
+252,grasshopper,visual,4,Does it have a long tongue?,n,n
+253,donkey,nonvisual,1,Is it used for freight?,n,n
+254,mouse,nonvisual,2,Is it used for transportation?,n,n
+255,grasshopper,nonvisual,3,Does it require a conductor?,n,n
+256,deer,nonvisual,4,Is it loud?,n,n
+257,dog,visual,1,Does it have a caboose?,n,n
+258,grasshopper,visual,2,Does it have an engine?,n,n
+259,carrot,visual,3,Does it have many cars?,n,n
+260,alligator,visual,4,Is it made of metal?,n,n
+261,jacket,nonvisual,1,Is it an animal?,n,n
+262,toad,nonvisual,2,Does it run fast?,n,n
+263,apple,nonvisual,3,Does it live in Africa?,n,n
+264,swan,nonvisual,4,Does it travel in herds?,n,n
+265,chair,visual,1,Does it have stripes?,n,n
+266,toad,visual,2,Does it have four legs?,n,n
+267,chicken,visual,3,Does it have hooves?,n,n
+268,alligator,visual,4,Does it have a mane?,n,n

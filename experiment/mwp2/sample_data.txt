@@ -1,0 +1,5 @@
+test	218	PME	2014_Apr_25_0937	MWP2	LL-Kramer	-1	-10	-1	noise	0	left	noise	-1	1	noise.wav	lion	140	lion.bmp	4.14057831257	left	516.224953695	1
+test	218	PME	2014_Apr_25_0937	MWP2	LL-Kramer	-1	-9	-1	noise	1	right	noise	-1	1	noise.wav	penguin	169	penguin.bmp	8.29480008374	right	514.380220906	1
+test	218	PME	2014_Apr_25_0937	MWP2	LL-Kramer	-1	-8	-1	noise	0	right	noise	-1	1	noise.wav	tiger	233	tiger.bmp	12.4587773761	right	537.147912779	1
+test	218	PME	2014_Apr_25_0937	MWP2	LL-Kramer	-1	-7	1	valid	0	left	piano	171	1	piano_1.wav	piano	171	piano.bmp	16.6745171467	left	557.591264718	1
+test	218	PME	2014_Apr_25_0937	MWP2	LL-Kramer	-1	-6	-1	noise	1	right	noise	-1	1	noise.wav	mouse	149	mouse.bmp	20.9892213169	right	541.38366261	1
