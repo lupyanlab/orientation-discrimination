@@ -1,17 +1,17 @@
-task_name: "Masked Word Priming: Two Mask"
-version_name: "MWP2"
+task_name: "Masked Word Priming: Mask Timing"
+version_name: "temporal"
 instructions:
     pages: [1,2,3,4,5,6]
-    text: 
+    text:
         1: "Welcome to the experiment! Press the SPACEBAR to begin."
         2: "Your job today is to identify which picture (left or right) is oriented correctly in the normal, upright position. For example you might see the two pictures below. They are the exact same image, except that one of them is flipped 180.0 degrees so that it is upside down, and the other one is not flipped. Your job is to pick the one that is *not flipped*, and press the key for that picture. You will use the 'f' key for the left picture and the 'j' key for the right picture. For the example below, you would press the 'j' key. Press the 'j' key for the right picture now."
         3: "These pictures are in the opposite order, so that the normal, upright picture is on the left. Press the 'f' key for the left picture now."
-        4: "We are interested in how quickly and accurately you can perform this task when you are presented sound cues and visual distractors before the pictures appear. For example, on some of the trials you will hear someone saying a word like 'lightbulb' or you might see flickering colored shapes like the picture below. Note that your task is the same no matter what you hear or see before the pictures appear: All we ask is that you do your very best to identify the picture that is correctly oriented in the normal, upright position as quickly as possible. Press the SPACEBAR to continue."
+        4: "We are interested in how quickly and accurately you can perform this task when you are presented sound cues and visual distractors before the pictures appear. For example, on some of the trials you will hear someone saying a word like 'piano' or you might see flickering colored shapes like the picture below. Note that your task is the same no matter what you hear or see before the pictures appear: All we ask is that you do your very best to identify the picture that is correctly oriented in the normal, upright position as quickly as possible. Press the SPACEBAR to continue."
         5: "Ok! Ready for the experiment? Please open the door and tell the experimenter you are ready to continue."
         6: "Let's do some practice trials. Make sure you have the headphones on. Press the SPACEBAR to begin the practice trials."
-end_of_practice: 
-    pages: [1,]
-    text: 
+end_of_practice:
+    pages: [1,2]
+    text:
         1: "You made it to the end of practice trials. Do you have any questions? If so, now is the time to ask the experimenter. When you are ready to continue, press the SPACEBAR."
         2: "You will not be hearing any feedback (bleeps or buzzes) during the test trials. However, please remember that the value of this type of experiment depends on you answering as quickly and accurately as possible. It may seem simple and boring, but please try to stay focused. You will get three breaks during the experiment. Try to challenge yourself to be as fast and accurate as possible! Press the SPACEBAR to begin."
 break_text: "Take a short break to rest your eyes and hands, but please stay at your computer. When you are ready to continue, please press the SPACEBAR."
@@ -20,43 +20,46 @@ timeout_text: "You missed one! Please respond as quickly as possible. Press the 
 trials:
     # Number of unique pictures viewed by each participant.
     num_pics: 10
-    
+
     # Ratio of trials with a valid label cue to those with an invalid label cue.
-    ratio_valid_cue: 0.75
-    
+    #ratio_valid_cue: 0.75 # fixed manually at 75% for MWP4
+
     # Ratio of trials with a label cue to those with a noise cue.
     ratio_label_cue: 0.5
-    
+
     # Ratio of trials with a visual mask during the auditory cue.
-    ratio_masked_cue: 0.5
+    ratio_cue_masked: 0.5
+
+    # Ratio of trials where the masks overlap with the pictures.
+    ratio_mask_overlap: 0.5
 task:
     # Duration of the fixation cross (sec.msec).
     fix_dur: 1.0
-    
+
     ## Duration of the cue (and mask) varies ##
-    
+
     # Delay between cue offset and picture onset (sec.msec).
     cue_offset_to_pic_onset: 0.4
-    
+
     # Duration of the pictures (sec.msec).
     pic_dur: 0.2
-    
+
     # Locations of the pictures.
     pic_locs:
         left: [-300.0, 0.0]
         right: [300.0, 0.0]
-    
+
     # Size of pictures.
     pic_size: [400.0, 400.0]
-    
+
     # Response keys (keyboard).
     resp_keys:
         f: 'left'
         j: 'right'
-    
+
     # Maximum time from picture offset to wait for a response.
     max_wait: 1.5
-    
+
     # Time from picture onset to the start of the next trial
     iti: 2.0
-survey_url: "https://uwmadison.qualtrics.com/SE/?SID=SV_6lNGc5Tr31GmAPX"
+survey_url: "https://uwmadison.qualtrics.com/SE/?SID=SV_3P2A6vO6HFXziUB"
