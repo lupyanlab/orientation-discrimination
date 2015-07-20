@@ -1,8 +1,14 @@
 
 recode_mask_type <- function(frame) {
   mask_type_map <- data.frame(
-    mask_type = c("nomask", "mask"),
-    mask_c = c(-0.5, 0.5))
+    mask_type = c("nomask", "mask", "during", "after"),
+    mask_c = c(-0.5, 0.5, 0.5, 0.5))
+
+  # Helmert contrasts for comparing nomask v (during, after) and during v after  
+  mask_type_map <- mask_type_map %>% mutate(
+    mask_m = car::recode(mask_type, "'nomask'=-2/3; else=1/3"),
+    mask_r = car::recode(mask_type, "'nomask'=0; 'after'=1/2; else=-1/2"))
+
   merge(frame, mask_type_map, all.x = TRUE)
 }
 

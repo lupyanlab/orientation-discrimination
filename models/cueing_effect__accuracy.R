@@ -1,4 +1,4 @@
-source("scripts/dualmask_data.R")
+source("scripts/all_data.R")
 
 library(lme4)
 
@@ -7,36 +7,38 @@ source("scripts/outliers.R")
 
 # Create contrast variables
 # -------------------------
-dualmask <- recode_mask_type(dualmask)
-dualmask <- recode_cue_type(dualmask)
+orientation <- recode_mask_type(orientation)
+orientation <- recode_cue_type(orientation)
 
 # Remove outlier subjs
 # --------------------
-dualmask <- filter(dualmask, subj_id %nin% dualmask_outliers)
+orientation <- filter(orientation,
+                      subj_id %nin% dualmask_outliers,
+                      subj_id %nin% temporal_outliers)
 
 # Predict rts from mask_type and cue_type
 # ---------------------------------------
 error_mod <- glmer(is_error ~ mask_c * (cue_l + cue_q) + (1|subj_id),
-                   family = binomial, data = dualmask)
+                   family = binomial, data = orientation)
 summary(error_mod)
 
 
 # Effect of mask on noise cue trials
-dualmask_noise <- filter(dualmask, cue_type == "noise")
+orientation_noise <- filter(orientation, cue_type == "noise")
 error_mod_noise <- glmer(is_error ~ mask_c + (1|subj_id),
-                         family = binomial, data = dualmask_noise)
+                         family = binomial, data = orientation_noise)
 summary(error_mod_noise)
 
 
 # Effect of mask on invalid cue trials
-dualmask_invalid <- filter(dualmask, cue_type == "invalid")
+orientation_invalid <- filter(orientation, cue_type == "invalid")
 error_mod_invalid <- glmer(is_error ~ mask_c + (1|subj_id),
-                         family = binomial, data = dualmask_invalid)
+                           family = binomial, data = orientation_invalid)
 summary(error_mod_invalid)
 
 
 # Effect of mask on valid cue trials
-dualmask_valid <- filter(dualmask, cue_type == "valid")
+orientation_valid <- filter(orientation, cue_type == "valid")
 error_mod_valid <- glmer(is_error ~ mask_c + (1|subj_id),
-                         family = binomial, data = dualmask_valid)
+                         family = binomial, data = orientation_valid)
 summary(error_mod_valid)
