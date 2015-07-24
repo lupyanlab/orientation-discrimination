@@ -4,6 +4,7 @@ library(lme4)
 
 source("scripts/contrasts.R")
 source("scripts/outliers.R")
+source("scripts/report_stats.R")
 
 # Create contrast variables
 # -------------------------
@@ -20,3 +21,4 @@ orientation <- filter(orientation,
 # ---------------------------------------
 rt_mod <- lmerTest::lmer(rt ~ mask_c * (cue_l + cue_q) + (1|subj_id), data = orientation)
 summary(rt_mod)
+report_lmerTest_effect(rt_mod, "mask_c:cue_l")
