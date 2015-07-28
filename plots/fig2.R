@@ -1,23 +1,19 @@
-source("./new-graphs/magnets.R")
-
-SAVE_AS <- FALSE
-
-temporal_gg <- temporal_gg + 
-  theme(
-    axis.text.y = element_blank(), 
-    axis.title.y = element_blank(),
-    axis.title.x = element_text(hjust = 0.82, size = 6)
-  )
-
-#source("./new-graphs/magnets-key.R")
-source("./new-graphs/axis-icons.R")
-
-trialstructure <- png_to_grob("./new-graphs/orientation-discrimination-overlap.png", alpha = 1.0)
-
 library(gridExtra)
+source("plots/axis-icons.R")
 
-if (SAVE_AS == "png") {
-  png("./new-graphs/fig2.png", width = 8, height = 3, units = "in", res = 200)
-  grid.arrange(trialstructure, labeled_gg, temporal_gg, ncol = 3)
-  dev.off()
-}
+# Dualmask experiment
+source("plots/dualmask/cueing_effect__rt.R")
+dualmask_trial_structure <- png_to_grob("plots/dualmask/trial-structure.png", alpha = 1.0)
+
+grid.arrange(dualmask_trial_structure, labeled_gg, nrow = 1)
+
+# Temporal experiment
+source("plots/temporal/cueing_effect__rt.R")
+temporal_trial_structure <- png_to_grob("plots/temporal/trial-structure.png", alpha = 1.0)
+
+grid.arrange(temporal_trial_structure, temporal_gg, nrow = 1)
+
+# Four panel plot
+grid.arrange(dualmask_trial_structure, labeled_gg,
+             temporal_trial_structure, temporal_gg,
+             nrow = 2)
