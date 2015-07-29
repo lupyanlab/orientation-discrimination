@@ -14,6 +14,8 @@ temporal_trial_structure <- png_to_grob("plots/temporal/trial-structure.png", al
 grid.arrange(temporal_trial_structure, temporal_gg, nrow = 1)
 
 # Four panel plot
+png("plots/fig2.png", width = 8, height = 6, units = "in", res = 400)
 grid.arrange(dualmask_trial_structure, labeled_gg,
              temporal_trial_structure, temporal_gg,
              nrow = 2)
+dev.off()

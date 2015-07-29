@@ -81,13 +81,13 @@ rightmid_icon_xmax <- rightmid_icon_x + icon_width/2
 # ------------------------------------------------------------------------------
 # Make the temporal plot
 
-spaces <- 8  # int
+spaces <- 14  # int
 interference_type <- paste0("during word", paste(rep(" ", times = spaces), collapse = ""), "after word")
 temporal_gg <- magnet_plot(preds, rect_points_temporal, temporal_error_bars, c(-0.6, 0.375)) +
   scale_x_continuous(interference_type, breaks = c(-0.6, 0.375),
                      labels = c("Blank screen", "Visual interference")) +
   theme(
-    axis.title.x = element_text(hjust = 0.70, size = 6)
+    axis.title.x = element_text(hjust = 0.78, size = 6)
   )
 temporal_gg
 
