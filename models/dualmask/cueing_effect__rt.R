@@ -17,6 +17,22 @@ dualmask <- filter(dualmask, subj_id %nin% dualmask_outliers)
 
 # Models predicting reaction time
 # -------------------------------
+# Effect of valid cue relative to baseline
+rt_mod_nomask_valid <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
+                                      data = filter(dualmask, mask_type == "nomask", cue_type != "invalid"))
+summary(rt_mod_nomask_valid)
+report_lmerTest_effect(rt_mod_nomask_valid, "cue_c")
+# -19.13 ms., 95% CI [-27.18, -11.07], p = 0.0000
+
+
+# Effect of invalid cue relative to baseline
+rt_mod_nomask_invalid <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
+                                        data = filter(dualmask, mask_type == "nomask", cue_type != "valid"))
+summary(rt_mod_nomask_invalid)
+report_lmerTest_effect(rt_mod_nomask_invalid, "cue_c")
+# 36.97 ms., 95% CI [24.43, 49.52], p = 0.0000
+
+
 # Predict rts from mask_type and cue_type
 rt_mod <- lmerTest::lmer(rt ~ mask_c * (cue_l + cue_q) + (1|subj_id), data = dualmask)
 summary(rt_mod)

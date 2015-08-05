@@ -15,5 +15,6 @@ recode_mask_type <- function(frame) {
 recode_cue_type <- function(frame) {
   frame %>% mutate(
     cue_l = car::recode(cue_type, "'valid'=-1/2; 'noise'=0; 'invalid'=1/2"),
-    cue_q = car::recode(cue_type, "'valid'=-1/3; 'noise'=2/3; 'invalid'=-1/3"))
+    cue_q = car::recode(cue_type, "'valid'=-1/3; 'noise'=2/3; 'invalid'=-1/3"),
+    cue_c = car::recode(cue_type, "'noise'=-1/2; else=1/2"))
 }
