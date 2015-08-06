@@ -15,6 +15,11 @@ dualmask <- recode_cue_type(dualmask)
 # --------------------
 dualmask <- filter(dualmask, subj_id %nin% dualmask_outliers)
 
+# Mean error rates
+# ----------------
+dualmask %>% group_by(cue_type, mask_type) %>%
+  summarize(error_rate = round(mean(is_error, na.rm = TRUE) * 100, 2))
+
 # Models prediction accuracy
 # --------------------------
 # Predict error rate from mask_type and cue_type
