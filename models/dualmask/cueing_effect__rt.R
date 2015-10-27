@@ -37,6 +37,13 @@ report_lmerTest_effect(rt_mod_nomask_invalid, "cue_c")
 rt_mod <- lmerTest::lmer(rt ~ mask_c * (cue_l + cue_q) + (1|subj_id), data = dualmask)
 summary(rt_mod)
 report_lmerTest_effect(rt_mod, "mask_c:cue_l")
+# -25.53 ms., 95% CI [-42.89, -8.18], p = 0.0040
+
+# Visual interference affected verbal cue trials only
+unique(dualmask[,c("cue_type", "cue_l", "cue_q")])
+report_lmerTest_effect(rt_mod, "mask_c:cue_q")
+# 14.29 ms., 95% CI [2.82, 25.77], p = 0.0147
+
 
 # Predict rts from mask_type (invalid cues)
 rt_mod_invalid <- lmerTest::lmer(rt ~ mask_c + (1|subj_id),
@@ -52,9 +59,13 @@ summary(rt_mod_noise)
 report_lmerTest_effect(rt_mod_noise, "mask_c")
 # 3.22 ms., 95% CI [-4.39, 10.83], p = 0.4068
 
+
 # Predict rts from mask_type (valid cues)
 rt_mod_valid <- lmerTest::lmer(rt ~ mask_c + (1|subj_id),
                                data = filter(dualmask, cue_type == "valid"))
 summary(rt_mod_valid)
 report_lmerTest_effect(rt_mod_valid, "mask_c")
 # 1.72 ms., 95% CI [-6.57, 10.01], p = 0.6843
+
+
+# Visual interference affected performance on verbal cue trials only
