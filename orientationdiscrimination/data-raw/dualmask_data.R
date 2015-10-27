@@ -1,12 +1,9 @@
-options(stringsAsFactors = FALSE)
-source("scripts/compile.R")
 
-# check global flag
-if (!exists("CLEAR_GLOBAL_ENVIRONMENT")) {
-  CLEAR_GLOBAL_ENVIRONMENT <- TRUE
-}
+# Compile the dualmask data
 
-dualmask <- compile("data/dualmask/data", key = "MWP2",
+devtools::load_all()
+
+dualmask <- compile("data-raw/dualmask/data", key = "MWP2",
                      headername = "_header.txt")
 
 # Remove practice trials
@@ -41,8 +38,4 @@ dualmask <- dualmask %>%
          is_correct, is_error) %>%
   arrange(subj_id, block_ix, trial_ix)
 
-if (CLEAR_GLOBAL_ENVIRONMENT == TRUE) {
-  # Remove unneeded variables
-  # -------------------------
-  rm(list = setdiff(ls(), "dualmask"))
-}
+devtools::use_data(dualmask)

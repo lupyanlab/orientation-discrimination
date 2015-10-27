@@ -1,12 +1,9 @@
-options(stringsAsFactors = FALSE)
-source("scripts/compile.R")
 
-# check global flag
-if (!exists("CLEAR_GLOBAL_ENVIRONMENT")) {
-  CLEAR_GLOBAL_ENVIRONMENT <- TRUE
-}
+# Compile the temporal data
 
-temporal <- compile("data/temporal/data", key = "MWP5",
+devtools::load_all()
+
+temporal <- compile("data-raw/temporal/data", key = "MWP5",
                     headername = "_header.txt")
 
 # Remove practice trials
@@ -42,8 +39,4 @@ temporal <- temporal %>%
          is_correct, is_error) %>%
   arrange(subj_id, block_ix, trial_ix)
 
-if (CLEAR_GLOBAL_ENVIRONMENT == TRUE) {
-  # Remove unneeded variables
-  # -------------------------
-  rm(list = setdiff(ls(), "temporal"))
-}
+devtools::use_data(temporal)
