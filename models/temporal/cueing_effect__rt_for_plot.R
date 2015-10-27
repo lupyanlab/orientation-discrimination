@@ -1,11 +1,8 @@
-CLEAR_GLOBAL_ENVIRONMENT <- FALSE
-source("scripts/temporal_data.R")
+devtools::load_all("orientationdiscrimination")
+data(temporal)
 
 library(lme4)
-
-source("scripts/contrasts.R")
-source("scripts/outliers.R")
-source("scripts/report_stats.R")
+library(dplyr)
 
 # Set contrasts
 # -------------

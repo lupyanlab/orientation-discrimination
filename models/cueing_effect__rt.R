@@ -1,15 +1,14 @@
-source("scripts/all_data.R")
+devtools::load_all("orientationdiscrimination")
+data(orientation)
 
+library(dplyr)
 library(lme4)
-
-source("scripts/contrasts.R")
-source("scripts/outliers.R")
-source("scripts/report_stats.R")
 
 # Create contrast variables
 # -------------------------
-orientation <- recode_mask_type(orientation)
-orientation <- recode_cue_type(orientation)
+orientation <- orientation %>%
+  recode_mask_type %>%
+  recode_cue_type
 
 # Remove outlier subjs
 # --------------------

@@ -1,15 +1,14 @@
-source("scripts/dualmask_data.R")
+devtools::load_all("orientationdiscrimination")
+data(dualmask)
 
 library(lme4)
-
-source("scripts/contrasts.R")
-source("scripts/outliers.R")
-source("scripts/report_stats.R")
+library(dplyr)
 
 # Create contrast variables
 # -------------------------
-dualmask <- recode_mask_type(dualmask)
-dualmask <- recode_cue_type(dualmask)
+dualmask <- dualmask %>%
+  recode_mask_type %>%
+  recode_cue_type
 
 # Remove outlier subjs
 # --------------------

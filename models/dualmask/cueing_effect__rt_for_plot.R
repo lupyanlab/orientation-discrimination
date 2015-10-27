@@ -1,11 +1,8 @@
-CLEAR_GLOBAL_ENVIRONMENT <- FALSE
-source("scripts/dualmask_data.R")
+devtools::load_all("orientationdiscrimination")
+data(dualmask)
 
+library(dplyr)
 library(lme4)
-
-source("scripts/contrasts.R")
-source("scripts/outliers.R")
-source("scripts/report_stats.R")
 
 # Create contrast variables
 # -------------------------
