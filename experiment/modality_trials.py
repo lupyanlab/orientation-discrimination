@@ -42,18 +42,19 @@ def select_pics_and_cues(stim_info, trial_params, seed):
 
 def balance_within_subj_vars(trial_parameters):
     """ Balance all within subject variables without any stimuli information """
-    trials = pd.DataFrame({'up_pic':['left','right']})
-    trials = expand(trials, name='is_cue_valid', values=[1,0],
-                    ratio=trial_parameters['ratio_valid_cue'], sample=False)
-
+    trials = pd.DataFrame({'is_cue_valid':[1,1,1,0]}) # 75% valid cue
     trials = expand(trials, name='cue_type', values=['label','noise'],
                     ratio=trial_parameters['ratio_label_cue'], sample=False)
     trials['is_cue_valid'][trials['cue_type'] == 'noise'] = -1
     trials['cue_type'][trials['is_cue_valid'] == 1] = 'valid'
     trials['cue_type'][trials['is_cue_valid'] == 0] = 'invalid'
 
+    trials = expand(trials, name='mask_type', values=['visual', 'auditory'],
+                    ratio=trial_parameters['ratio_visual_mask'], sample=False)
     trials = expand(trials, name='is_cue_masked', values=[1,0],
-                    ratio=trial_parameters['ratio_masked_cue'], sample=False)
+                    ratio=trial_parameters['ratio_cue_masked'], sample=False)
+    trials['mask_type'][trials['is_cue_masked'] == 0] = 'nomask'
+
     return trials
 
 def add_pic_info(trials, pic_info, seed):
@@ -72,6 +73,11 @@ def add_cue_info(trials, cue_info, noise_info, seed):
                     seed=seed).reset_index(drop=True)
 
     trials = pd.concat([valid_cue, invalid_cue, no_cue], ignore_index=True)
+    return trials
+
+def add_ori_info(trials, seed):
+    pic_ori = pd.DataFrame({'up_pic':['left','right']})
+    trials = generate(trials, pic_ori, seed = seed)
     return trials
 
 def add_practice_block(trials, pic_info, seed):
@@ -106,6 +112,8 @@ def make_trials(exp_dir, trial_params, seed):
     trials = add_pic_info(trials, stim_info['pic'], seed)
     trials = add_cue_info(trials, stim_info['cue'], stim_info['noise'], seed)
 
+    trials = add_ori_info(trials, seed)
+
     trials = add_block(trials, 100, name='block_ix', start=0, groupby='pic',
                        seed=seed)
     trials = add_practice_block(trials, stim_info['pic'], seed=seed)
@@ -113,7 +121,8 @@ def make_trials(exp_dir, trial_params, seed):
     trials = shuffle_and_enumerate(trials, seed)
 
     trials = trials[['block_ix', 'trial_ix',
-                     'is_cue_valid', 'cue_type', 'is_cue_masked', 'up_pic',
+                     'cue_type', 'is_cue_valid', 'is_cue_masked', 'up_pic',
+                     'mask_type',
                      'cue', 'cue_id', 'cue_version', 'cue_file',
                      'pic', 'pic_id', 'pic_file']]
     return trials
@@ -124,7 +133,7 @@ def write_trials(trials_pth, exp_dir, trial_params, seed):
 
 if __name__ == '__main__':
     exp_dir = os.path.dirname(os.path.abspath(__file__))
-    version_file = os.path.join(exp_dir, 'dualmask.yaml')
+    version_file = os.path.join(exp_dir, 'modality.yaml')
     trial_params = yaml.load(open(version_file, 'r'))['trials']
     seed = 105
 

@@ -194,9 +194,9 @@ class Experiment(object):
                 advance_keys = ['j',]
 
             elif page == 3:
-                self.pics_right['lightbulb.bmp'].setOri(180.0)
-                self.pics_right['lightbulb.bmp'].draw()
-                self.pics_left['lightbulb.bmp'].draw()
+                self.pics_right['piano.bmp'].setOri(180.0)
+                self.pics_right['piano.bmp'].draw()
+                self.pics_left['piano.bmp'].draw()
                 advance_keys = ['f',]
 
             elif page == 4:
@@ -260,9 +260,9 @@ class Experiment(object):
             cue = self.cues[trial['cue_file']]
         cue_dur = cue.getDuration()
 
-        stims_during_cue = []
-        if trial['is_cue_masked'] == 1:
-            stims_during_cue.extend([self.mask_left, self.mask_right])
+        stims_after_cue = []
+        if trial['mask_type'] == 'visual':
+            stims_after_cue.extend([self.mask_left, self.mask_right])
 
         left_pic = self.pics_left[trial['pic_file']]   # just a shortcut
         right_pic = self.pics_right[trial['pic_file']] #
@@ -283,13 +283,22 @@ class Experiment(object):
         self.win.flip()
         core.wait(self.version['task']['fix_dur'])
 
-        # play cue and show mask
-        cue_timer = core.Clock()
+        # play cue
         cue.play()
-        while cue_timer.getTime() < cue_dur:
-            [stim.draw() for stim in stims_during_cue]
+        self.win.flip()
+        core.wait(cue_dur)
+
+        # if its an interference trial, present the interference
+        # play auditory interference before entering visual interference loop
+        if trial['mask_type'] == 'auditory':
+            self.noises['noise.wav'].play()
+        post_timer = core.Clock()
+        while post_timer.getTime() < cue_dur:
+            # draw the masks if they were added to stims_after_cue
+            [stim.draw() for stim in stims_after_cue]
             self.win.flip()
             core.wait(0.01)
+        self.win.flip()
 
         # show frames
         self.stim['left_frame'].draw()
@@ -314,11 +323,10 @@ class Experiment(object):
                                   timeStamped=rt_timer)
         try:
             key, rt = response[0]
+            response = self.resp_keys[key]
         except TypeError:
             rt = self.version['task']['max_wait']
             response = 'timeout'
-        else:
-            response = self.resp_keys[key]
 
         is_correct = int(response == trial['up_pic'])
 

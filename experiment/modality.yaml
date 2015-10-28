@@ -22,13 +22,16 @@ trials:
     num_pics: 10
 
     # Ratio of trials with a valid label cue to those with an invalid label cue.
-    ratio_valid_cue: 0.75
+    #ratio_valid_cue: 0.75 # fixed manually at 75% for MWP4
 
     # Ratio of trials with a label cue to those with a noise cue.
     ratio_label_cue: 0.5
 
-    # Ratio of trials with a visual mask during the auditory cue.
-    ratio_masked_cue: 0.5
+    # Ratio of trials with a visual mask after the auditory cue.
+    ratio_cue_masked: 0.5
+
+    # Ratio of masked trials with visual mask compared to auditory mask
+    ratio_visual_mask: 0.5
 task:
     # Duration of the fixation cross (sec.msec).
     fix_dur: 1.0

@@ -224,7 +224,8 @@ class Experiment(object):
 
         header_pth = os.path.join(self.version_dir, 'data', '_header.txt')
         if not os.path.isfile(header_pth):
-            header = self.subj_vars_fields+self.trials_fields+self.resp_fields
+            mutable_trials_fields = list(self.trials_fields)
+            header = self.subj_vars_fields+mutable_trials_fields+self.resp_fields
             header_file = open(header_pth, 'w')
             write_list_to_file(header, header_file, close=True)
 
