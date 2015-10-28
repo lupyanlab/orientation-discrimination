@@ -43,9 +43,9 @@ def select_pics_and_cues(stim_info, trial_params, seed):
 def balance_within_subj_vars(trial_parameters):
     """ Balance all within subject variables without any stimuli information """
     trials = pd.DataFrame({'is_cue_valid':[1,1,1,0]}) # 75% valid cue
-    trials = expand(trials, name='cue_type', values=['label','noise'],
+    trials = expand(trials, name='cue_type', values=['label','nocue'],
                     ratio=trial_parameters['ratio_label_cue'], sample=False)
-    trials['is_cue_valid'][trials['cue_type'] == 'noise'] = -1
+    trials['is_cue_valid'][trials['cue_type'] == 'nocue'] = -1
     trials['cue_type'][trials['is_cue_valid'] == 1] = 'valid'
     trials['cue_type'][trials['is_cue_valid'] == 0] = 'invalid'
 
