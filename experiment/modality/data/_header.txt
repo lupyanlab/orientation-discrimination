@@ -1,0 +1,1 @@
+subj_id	seed	initials	date	exp_name	room	block_ix	trial_ix	cue_type	is_cue_valid	is_cue_masked	up_pic	mask_type	cue	cue_id	cue_version	cue_file	pic	pic_id	pic_file	exp_timer	response	rt	is_correct

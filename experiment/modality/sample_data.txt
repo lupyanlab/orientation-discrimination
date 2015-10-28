@@ -1,0 +1,15 @@
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-10	valid	1	0	left	nomask	mouse	149	3	mouse_3.wav	mouse	149	mouse.bmp	4.90879297256	left	775.860071182	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-9	noise	-1	1	left	visual	noise	-1	1	noise.wav	pig	172	pig.bmp	9.77861714363	left	824.632883072	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-8	noise	-1	1	left	auditory	noise	-1	1	noise.wav	tomato	236	tomato.bmp	14.6491520405	left	738.468885422	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-7	invalid	0	1	left	visual	mouse	149	3	mouse_3.wav	leopard	136	leopard.bmp	19.5481250286	left	641.004800797	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-6	noise	-1	1	left	auditory	noise	-1	1	noise.wav	snowman	210	snowman.bmp	24.4241850376	left	532.248020172	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-5	noise	-1	1	right	auditory	noise	-1	1	noise.wav	apple	6	apple.bmp	29.3088030815	right	698.803901672	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-4	valid	1	1	left	visual	table	226	4	table_4.wav	table	226	table.bmp	34.2516391277	left	573.379039764	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-3	valid	1	0	left	nomask	rabbit	182	4	rabbit_4.wav	rabbit	182	rabbit.bmp	39.1594469547	left	667.794942856	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-2	noise	-1	1	right	auditory	noise	-1	1	noise.wav	saltshaker	194	saltshaker.bmp	44.037060976	right	508.174180984	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	-1	-1	noise	-1	0	left	nomask	noise	-1	1	noise.wav	tiger	233	tiger.bmp	48.908506155	left	837.44096756	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	0	0	noise	-1	0	left	nomask	noise	-1	1	noise.wav	tiger	233	tiger.bmp	55.5170071125	left	580.591917038	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	0	1	valid	1	0	left	nomask	mouse	149	3	mouse_3.wav	mouse	149	mouse.bmp	60.4205930233	right	411.654949188	0
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	0	2	invalid	0	1	right	auditory	snowman	210	2	snowman_2.wav	pig	172	pig.bmp	65.7599351406	right	655.836105347	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	0	3	noise	-1	1	left	visual	noise	-1	1	noise.wav	rabbit	182	rabbit.bmp	70.6242821217	left	726.814031601	1
+test	101	PME	2015_Oct_27_2120	modality	PierceiMac.local	0	4	noise	-1	0	left	nomask	noise	-1	1	noise.wav	apple	6	apple.bmp	75.4961280823	left	989.668130875	1
