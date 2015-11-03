@@ -20,3 +20,39 @@ recode_cue_type <- function(frame) {
     cue_c = car::recode(cue_type, "'noise'=-1/2; else=1/2", as.factor.result = FALSE, as.numeric.result = TRUE)
   )
 }
+
+recode_modality_mask_type <- function(frame) {
+  mask_types <- c("nomask", "auditory", "visual")
+  
+  mask_type_map <- data_frame(
+    mask_type = mask_types,
+    mask_c = ifelse(mask_type == "nomask", -0.5, 0.5)
+  )
+  
+  mask_type_treatment <- contr.treatment(mask_types, base = 1) %>%
+    as.data.frame %>%
+    rename(auditory_v_nomask = auditory, visual_v_nomask = visual) %>%
+    broom::fix_data_frame(newcol = "mask_type")
+  
+  mask_type_map <- left_join(mask_type_map, mask_type_treatment)
+  
+  mask_type_helmert <- contr.helmert(mask_types) %>%
+    as.data.frame %>%
+    rename(helmert_residual = V1, helmert_main = V2) %>%
+    broom::fix_data_frame(newcol = "mask_type")
+  
+  mask_type_map <- left_join(mask_type_map, mask_type_helmert)
+  
+  frame %>% left_join(mask_type_map)
+}
+
+recode_modality_cue_type <- function(frame) {
+  cue_types <- c("valid", "nocue", "invalid")
+  
+  cue_type_poly <- contr.poly(cue_types) %>%
+    as.data.frame %>%
+    rename(cue_l = `.L`, cue_q = `.Q`) %>%
+    mutate(cue_type = cue_types)
+  
+  frame %>% left_join(cue_type_poly)
+}

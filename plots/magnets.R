@@ -19,6 +19,19 @@ make_rects <- function(row) {
   )
 }
 
+make_rects_modality <- function(row) {
+  with(row, 
+       data.frame(
+         ymin = c(valid, nocue), 
+         ymax = c(nocue, invalid), 
+         cue_type = c("valid", "invalid"),
+         mask_type = mask_type,
+         mask_c = mask_c
+       ) %>%
+         mutate(xmin = mask_c - bar_width/2, xmax = mask_c + bar_width/2)
+  )
+}
+
 
 y_lim <- c(425, 575)
 x_lim <- c(-1, 1)
