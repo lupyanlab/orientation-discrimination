@@ -1,6 +1,4 @@
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-10	valid	1	0	left	nomask	mouse	149	3	mouse_3.wav	mouse	149	mouse.bmp	4.87569354859	left	899.681833456	1
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-9	nocue	-1	1	left	visual	noise	-1	1	noise.wav	pig	172	pig.bmp	9.75688427256	left	568.442296353	1
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-8	nocue	-1	1	left	auditory	noise	-1	1	noise.wav	tomato	236	tomato.bmp	14.6060800537	left	710.200854694	1
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-7	invalid	0	1	left	visual	mouse	149	3	mouse_3.wav	leopard	136	leopard.bmp	19.4872592546	left	995.900644921	1
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-6	nocue	-1	1	left	auditory	noise	-1	1	noise.wav	snowman	210	snowman.bmp	29.7466533297	timeout	1500.0	0
-test	101	PME	2015_Oct_28_1421	modality	LL-George	-1	-5	nocue	-1	1	right	auditory	noise	-1	1	noise.wav	apple	6	apple.bmp	34.6110526063	right	543.043387705	1
+test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-10	noise	-1	0	right	nomask	noise	-1	1	noise.wav	alligator	3	alligator.bmp	4.88134002686	right	1570.77693939	1
+test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-9	noise	-1	1	right	visual	noise	-1	1	noise.wav	elephant	84	elephant.bmp	9.74797701836	right	539.551973343	1
+test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-8	noise	-1	0	left	nomask	noise	-1	1	noise.wav	table	226	table.bmp	14.6246960163	left	499.319076538	1
+test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-7	noise	-1	1	right	auditory	noise	-1	1	noise.wav	skunk	206	skunk.bmp	19.4984030724	right	460.738182068	1

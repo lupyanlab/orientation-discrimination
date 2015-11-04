@@ -254,15 +254,11 @@ class Experiment(object):
 
     def _present_trial(self, trial):
         """ Present a single trial """
-        # In the modality version, don't present two noise cues back to back.
-        # Instead, on the nocue trials, just wait silently for the duration
-        # of the noise cue.
-        if trial['cue_type'] == 'nocue':
-            cue = None
-            cue_dur = 0.7  # hard code noise.getDuration()
+        if trial['cue_type'] == 'noise':
+            cue = self.noises[trial['cue_file']]
         else:
             cue = self.cues[trial['cue_file']]
-            cue_dur = cue.getDuration()
+        cue_dur = cue.getDuration()
 
         stims_after_cue = []
         if trial['mask_type'] == 'visual':
