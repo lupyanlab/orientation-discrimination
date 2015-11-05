@@ -284,7 +284,6 @@ class Experiment(object):
         self.stim['left_frame'].autoDraw = True
         self.stim['right_frame'].autoDraw = True
 
-
         self.win.flip()
         core.wait(self.version['task']['fix_dur'])
 
