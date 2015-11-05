@@ -4,6 +4,8 @@ import yaml
 import socket
 import webbrowser
 
+from resources.pyo_sound import *
+
 from psychopy import visual, core, event, sound
 
 from modality_trials import write_trials

@@ -1,4 +1,0 @@
-test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-10	noise	-1	0	right	nomask	noise	-1	1	noise.wav	alligator	3	alligator.bmp	4.88134002686	right	1570.77693939	1
-test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-9	noise	-1	1	right	visual	noise	-1	1	noise.wav	elephant	84	elephant.bmp	9.74797701836	right	539.551973343	1
-test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-8	noise	-1	0	left	nomask	noise	-1	1	noise.wav	table	226	table.bmp	14.6246960163	left	499.319076538	1
-test	142	PME 	2015_Nov_04_0949	modality	dyn-72-33-118-163.uwnet.wisc.edu	-1	-7	noise	-1	1	right	auditory	noise	-1	1	noise.wav	skunk	206	skunk.bmp	19.4984030724	right	460.738182068	1
