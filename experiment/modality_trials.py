@@ -114,8 +114,36 @@ def make_trials(exp_dir, trial_params, seed):
 
     trials = add_ori_info(trials, seed)
 
-    trials = add_block(trials, 100, name='block_ix', start=0, groupby='pic',
-                       seed=seed)
+    # trials = add_block(trials, 100, name='block_ix', start=0, groupby='pic',
+    #                    seed=seed)
+    # Separate auditory and visual interference trials by block
+    # TODO: this should be determined as a multiple of num trials
+    nomask_blocks = range(4)
+    alternating_blocks = [[0, 2], [1, 3]]
+
+    # Counterbalance blocks
+    if seed % 2:
+        alternating_blocks = list(reversed(alternating_blocks))
+    visual_blocks, auditory_blocks = alternating_blocks
+
+    mask_type_counts = trials.mask_type.value_counts()
+
+    block_values = {
+        'visual': visual_blocks * (mask_type_counts['visual']/len(visual_blocks)),
+        'auditory': auditory_blocks * (mask_type_counts['auditory']/len(auditory_blocks)),
+        'nomask': nomask_blocks * (mask_type_counts['nomask']/len(nomask_blocks)),
+    }
+
+    prng = np.random.RandomState(seed)
+    for _block_values in block_values.values():
+        prng.shuffle(_block_values)
+
+    def determine_block(row):
+        return block_values[row['mask_type']].pop()
+
+    trials['block_ix'] = trials.apply(determine_block, axis=1)
+    trials.sort('block_ix', inplace=True)
+
     trials = add_practice_block(trials, stim_info['pic'], seed=seed)
 
     trials = shuffle_and_enumerate(trials, seed)

@@ -4,6 +4,9 @@ import yaml
 import socket
 import webbrowser
 
+# must do this *before* importing psychopy.sound
+from resources.pyo_sound import *
+
 from psychopy import visual, core, event, sound
 
 from modality_trials import write_trials
@@ -277,9 +280,10 @@ class Experiment(object):
         ############################
         # BEGIN TRIAL PRESENTATION #
         ############################
+        self.stim['fix'].autoDraw = True
+        self.stim['left_frame'].autoDraw = True
+        self.stim['right_frame'].autoDraw = True
 
-        # show fixation cross
-        self.stim['fix'].draw()
         self.win.flip()
         core.wait(self.version['task']['fix_dur'])
 
@@ -301,22 +305,18 @@ class Experiment(object):
             core.wait(0.01)
         self.win.flip()
 
-        # show frames
-        self.stim['left_frame'].draw()
-        self.stim['right_frame'].draw()
         self.win.flip()
         core.wait(self.version['task']['cue_offset_to_pic_onset'])
 
         # show pic and start RT timer
-        self.stim['left_frame'].draw()
-        self.stim['right_frame'].draw()
         left_pic.draw()
         right_pic.draw()
         rt_timer = core.Clock()
         self.win.flip()
         core.wait(self.version['task']['pic_dur'])
 
-        # replace images with prompt
+        # remove images and replace fix with prompt
+        self.stim['fix'].autoDraw = False
         self.stim['prompt'].draw()
         self.win.flip()
         response = event.waitKeys(maxWait=self.version['task']['max_wait'],
