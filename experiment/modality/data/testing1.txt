@@ -1,0 +1,4 @@
+testing1	211	NS	2015_Nov_04_1954	modality	LL-Jerry	-1	-10	invalid	0	1	left	visual	penguin	169	3	penguin_3.wav	apple	6	apple.bmp	4.75992273074	left	1293.29415457	1
+testing1	211	NS	2015_Nov_04_1954	modality	LL-Jerry	-1	-9	valid	1	1	left	visual	penguin	169	1	penguin_1.wav	penguin	169	penguin.bmp	9.66013334866	left	601.030363585	1
+testing1	211	NS	2015_Nov_04_1954	modality	LL-Jerry	-1	-8	noise	-1	0	left	nomask	noise	-1	1	noise.wav	lion	140	lion.bmp	14.510345567	left	934.719314799	1
+testing1	211	NS	2015_Nov_04_1954	modality	LL-Jerry	-1	-7	valid	1	0	right	nomask	swan	223	3	swan_3.wav	swan	223	swan.bmp	19.8655681243	left	696.422055364	0

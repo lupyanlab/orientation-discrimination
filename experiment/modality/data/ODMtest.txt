@@ -1,2 +1,0 @@
-ODMtest	104	JR	2015_Nov_02_1030	modality	LL-Kramer	-1	-10	valid	1	0	right	nomask	rhinoceros	186	3	rhinoceros_3.wav	rhinoceros	186	rhinoceros.bmp	5.40718339384	right	588.42821233	1
-ODMtest	104	JR	2015_Nov_02_1030	modality	LL-Kramer	-1	-9	invalid	0	1	right	auditory	penguin	169	2	penguin_2.wav	elephant	84	elephant.bmp	10.3094092794	right	519.494262524	1
