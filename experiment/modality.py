@@ -5,13 +5,27 @@ import socket
 import webbrowser
 
 # must do this *before* importing psychopy.sound
-from resources.pyo_sound import *
+from psychopy import prefs
 
-from psychopy import visual, core, event, sound
+try:
+    import pyo
+except ImportError:
+    print 'could not load pyo!'
+else:
+    prefs.general['audioLib'] = ['pyo']
 
-from modality_trials import write_trials
+from psychopy import sound
+
+if prefs.general['audioLib'][0] == 'pyo':
+    print 'initializing pyo to 48000'
+    sound.init(48000,buffer=128)
+    print 'Using %s(with %s) for sounds' %(sound.audioLib, sound.audioDriver)
+
+from psychopy import visual, core, event
+
 from resources.psychopy_helper import *
 from resources.dynamic_mask import DynamicMask
+from modality_trials import write_trials
 
 class Experiment(object):
     def __init__(self, exp_dir, version_file):
