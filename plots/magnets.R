@@ -33,9 +33,9 @@ make_rects_modality <- function(row) {
 }
 
 
-y_lim <- c(425, 575)
+default_y_lim <- c(425, 575)
 x_lim <- c(-1, 1)
-magnet_plot <- function(preds, rects, error, x_breaks) {
+magnet_plot <- function(preds, rects, error, x_breaks, y_lim = default_y_lim) {
   ggplot(preds) +
     geom_rect(aes(fill = cue_type, xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), 
       data = rects, alpha = 0.4) +
@@ -47,7 +47,7 @@ magnet_plot <- function(preds, rects, error, x_breaks) {
     scale_fill_manual(values = unlist(magnet_color_scheme)) +
     scale_x_continuous("", breaks = x_breaks, 
       labels = c("Blank screen", "Visual interference")) +
-    scale_y_continuous("Reaction Time (ms)", breaks = seq(450, 550, by = 25)) +
+    scale_y_continuous("Reaction Time (ms)", breaks = seq(y_lim[1], y_lim[2], by = 25)) +
     coord_cartesian(ylim = y_lim, xlim = x_lim) +
     theme_bw(base_size = 10) +
     theme(
