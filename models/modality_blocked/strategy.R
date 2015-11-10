@@ -27,6 +27,8 @@ ggplot(modality_blocked, aes(x = mask_type, y = rt, color = cue_type)) +
   geom_point(stat = "summary", fun.y = "mean", shape = 1, size = 3) +
   facet_wrap("strategy")
 
+ggsave("models/modality_blocked/strategy-means.png")
+
 # Calculate cueing effect by hand
 # -------------------------------
 cueing_effects <- modality_blocked %>%
@@ -42,5 +44,5 @@ ggplot(cueing_effects, aes(x = mask_type, y = cueing_effect, color = strategy)) 
   scale_y_continuous("cueing_effect = invalid_rt - valid_rt") +
   facet_wrap("strategy")
 
-ggsave("models/modality_blocked/strategy.png")
+ggsave("models/modality_blocked/strategy-cueing-effect.png")
   
