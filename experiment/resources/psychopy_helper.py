@@ -2,20 +2,30 @@
 import os
 import random
 
+# must do this *before* importing psychopy.sound
+from psychopy import prefs
+
+try:
+    import pyo
+except ImportError:
+    print 'could not load pyo!'
+else:
+    prefs.general['audioLib'] = ['pyo']
+
 from psychopy import core, event, visual, data, gui, misc, sound
 
 def enter_subj_info(exp_name, exp_dir, options):
-    """ 
-    Brings up a GUI in which to enter all the subject info. 
+    """
+    Brings up a GUI in which to enter all the subject info.
     """
     def inputsOK(options,expInfo):
         for curOption in sorted(options.items()):
             if curOption[1]['options'] != 'any' and expInfo[curOption[1]['name']] not in curOption[1]['options']:
                 return [False,"The option you entered for " + curOption[1]['name'] + " is not in the allowable list of options: " + str(curOption[1]['options'])]
         return [True,'']
-    
+
     version_pth = os.path.join(exp_dir, exp_name, '_last_params.pickle')
-    
+
     try:
         expInfo = misc.fromFile(version_pth)
     except:
@@ -26,7 +36,7 @@ def enter_subj_info(exp_name, exp_dir, options):
     tips={}
     for curOption in sorted(options.items()):
         tips[curOption[1]['name']]=curOption[1]['prompt']
-    expInfo['date']= data.getDateStr() 
+    expInfo['date']= data.getDateStr()
     expInfo['exp_name']= exp_name
     dlg = gui.DlgFromDict(expInfo, title=exp_name, fixed=['date','exp_name'],order=[optionName[1]['name'] for optionName in sorted(options.items())],tip=tips)
     if dlg.OK:
@@ -44,7 +54,7 @@ def import_trials(fileName, method="sequential", seed=random.randint(1,100)):
 	trials = data.TrialHandler(stimList,1,method=method,seed=seed)
 	return (trials,fieldNames)
 
-def show_text(win, textToShow, color=[-1,-1,-1], waitForKey=True, 
+def show_text(win, textToShow, color=[-1,-1,-1], waitForKey=True,
               acceptOnly=0, inputDevice="keyboard", mouse=False, pos=[0,0],
               scale=1):
 	global event
@@ -83,10 +93,10 @@ def show_text(win, textToShow, color=[-1,-1,-1], waitForKey=True,
 			for event in pygame.event.get(): #check responses
 				if mouse:
 					if event.type==pygame.MOUSEBUTTONDOWN:
-						pygame.event.clear() 
+						pygame.event.clear()
 						return
 				if event.type==pygame.KEYDOWN or event.type==pygame.JOYBUTTONDOWN:
-					pygame.event.clear() 
+					pygame.event.clear()
 					return
 
 def popup_error(text):
@@ -97,13 +107,13 @@ def popup_error(text):
 def load_images(image_dir, ext, **kwargs):
     if not isinstance(ext, list):
         ext = [ext,]
-    
+
     image_names = [name for name in os.listdir(image_dir) if name[-3:] in ext]
     images = {}
     for img_name in image_names:
         img_path = os.path.join(image_dir, img_name)
         images[img_name] = visual.ImageStim(image=img_path, **kwargs)
-    
+
     return images
 
 def load_sounds(sound_dir, ext):
@@ -112,7 +122,7 @@ def load_sounds(sound_dir, ext):
     for snd_name in sound_names:
         snd_path = os.path.join(sound_dir, snd_name)
         sounds[snd_name] = sound.Sound(snd_path)
-    
+
     return sounds
 
 def write_list_to_file(line, file, close=False):
@@ -120,6 +130,6 @@ def write_list_to_file(line, file, close=False):
     file.write(line)
     file.flush()
     os.fsync(file)
-    
+
     if close:
         file.close()
