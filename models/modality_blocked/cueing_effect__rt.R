@@ -15,6 +15,11 @@ modality_blocked <- modality_blocked %>%
 modality_blocked <- modality_blocked %>%
   filter(rt < 2000)
 
+# Quick plot of means
+# -------------------
+ggplot(modality_blocked, aes(x = mask_type, y = rt, color = cue_type)) +
+  geom_point(stat = "summary", fun.y = "mean", size = 3)
+
 # Models prediction RTs
 # ---------------------
 # Cueing effect on nomask trials

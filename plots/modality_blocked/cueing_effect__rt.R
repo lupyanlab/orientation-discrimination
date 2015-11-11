@@ -82,7 +82,7 @@ rightmid_icon_xmax <- rightmid_icon_x + icon_width/2
 # Make the modality_blocked plot
 
 modality_blocked_gg <- magnet_plot(preds, rect_points_modality_blocked, modality_blocked_error_bars, c(-0.6, 0.375),
-                                   y_lim = c(425, 625)) +
+                                   y_lim = c(500, 625)) +
   scale_x_continuous("", breaks = c(-0.6, 0.15, 0.6),
                      labels = c("Blank screen", "Auditory interference", "Visual interference"))
 modality_blocked_gg
