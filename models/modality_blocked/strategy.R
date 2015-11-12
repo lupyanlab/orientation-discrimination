@@ -8,7 +8,7 @@ library(tidyr)
 # ----------------
 modality_blocked <- modality_blocked %>%
   recode_cue_type %>%
-  recode_modality_mask_type
+  recode_mask_type
 
 # Drop outliers
 # -------------
