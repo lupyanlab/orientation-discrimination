@@ -13,7 +13,8 @@ modality_blocked <- modality_blocked %>%
 # Drop outliers
 # -------------
 modality_blocked <- modality_blocked %>%
-  filter(rt < 2000)
+  filter(rt < 2000) %>%
+  filter(!(subj_id %in% paste0("ODM", 301:308)))
 
 # Models prediction RTs
 # ---------------------
