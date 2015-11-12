@@ -31,6 +31,7 @@ recode_mask_type <- function(frame) {
 recode_cue_type <- function(frame) {
   cue_type_map <- data_frame(
     cue_type = c("valid", "invalid", "noise"),
+    cue_c = c(-1/2, 1/2, NA),
     cue_l = c(-1/2, 1/2, 0),
     cue_q = c(-1/3, -1/3, 2/3),
 

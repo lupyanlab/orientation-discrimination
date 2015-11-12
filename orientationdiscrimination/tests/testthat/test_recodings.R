@@ -7,6 +7,7 @@ test_that("cue type works for dualmask experiment", {
   dualmask <- data_frame(cue_type = c("valid", "noise", "invalid")) %>%
     recode_cue_type
 
+  expect_equal(dualmask$cue_c, c(-1/2, NA, 1/2))
   expect_equal(dualmask$cue_l, c(-1/2, 0, 1/2))
   expect_equal(dualmask$cue_q, c(-1/3, 2/3, -1/3))
 
