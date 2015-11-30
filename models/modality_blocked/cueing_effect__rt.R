@@ -3,11 +3,12 @@ data(modality_blocked)
 
 library(lme4)
 library(dplyr)
+library(ggplot2)
 
 # Set contrasts
 # -------------
 modality_blocked <- modality_blocked %>%
-  recode_modality_mask_type %>%
+  recode_mask_type %>%
   recode_cue_type
 
 # Drop outliers
