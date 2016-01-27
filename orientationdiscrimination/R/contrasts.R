@@ -47,28 +47,3 @@ recode_cue_type <- function(frame) {
   # Merge map and return
   frame %>% left_join(cue_type_map)
 }
-
-recode_modality_mask_type <- function(frame) {
-  mask_types <- c("nomask", "auditory", "visual")
-
-  mask_type_map <- data_frame(
-    mask_type = mask_types,
-    mask_c = ifelse(mask_type == "nomask", -0.5, 0.5)
-  )
-
-  mask_type_treatment <- contr.treatment(mask_types, base = 1) %>%
-    as.data.frame %>%
-    rename(auditory_v_nomask = auditory, visual_v_nomask = visual) %>%
-    broom::fix_data_frame(newcol = "mask_type")
-
-  mask_type_map <- left_join(mask_type_map, mask_type_treatment)
-
-  mask_type_helmert <- contr.helmert(mask_types) %>%
-    as.data.frame %>%
-    rename(helmert_residual = V1, helmert_main = V2) %>%
-    broom::fix_data_frame(newcol = "mask_type")
-
-  mask_type_map <- left_join(mask_type_map, mask_type_helmert)
-
-  frame %>% left_join(mask_type_map)
-}
