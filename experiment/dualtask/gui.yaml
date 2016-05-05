@@ -1,0 +1,8 @@
+1:
+  name: subj_id
+  prompt: Subject identifier
+  default: MOW101
+2:
+  name: seed
+  prompt: Randomizer
+  default: 101

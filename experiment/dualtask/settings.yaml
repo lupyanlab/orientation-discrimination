@@ -1,0 +1,22 @@
+layout:
+  pic_size: [400, 400]
+  positions:
+    left: [-300, 0]
+    right: [300, 0]
+waits:
+  fixation_duration: 1.0
+
+  # NOTE: could instead define cue_onset_to_target_onset
+  cue_offset_to_target_onset: 0.4
+
+  target_duration: 0.2
+  response_window: 1.5
+  iti: 2.0
+response_keys:
+  pic:
+    left: left
+    right: right
+  word:
+    up: up
+    down: down
+survey_url: 'https://docs.google.com/forms/d/1XvbWLeTm6SuyM4dr1CpkRXO6V-YT2KwGTtFN-dWFyU8/viewform?entry.910726511={subj_id}&entry.125044269={computer}&entry.969548156&entry.969586956&entry.1239227527&entry.1711268051&entry.23393786'
