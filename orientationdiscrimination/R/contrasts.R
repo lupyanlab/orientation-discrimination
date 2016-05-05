@@ -1,4 +1,6 @@
 
+#' @import dplyr
+#' @export
 recode_mask_type <- function(frame) {
   mask_type_map <- data_frame(
     mask_type = c("nomask", "mask"),
@@ -28,6 +30,8 @@ recode_mask_type <- function(frame) {
   frame %>% left_join(all_mask_type_map)
 }
 
+#' @import dplyr
+#' @export
 recode_cue_type <- function(frame) {
   cue_type_map <- data_frame(
     cue_type = c("valid", "invalid", "noise"),

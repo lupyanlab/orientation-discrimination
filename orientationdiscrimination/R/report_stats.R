@@ -1,5 +1,8 @@
 library(broom)
 
+#' @import dplyr
+#' @import broom
+#' @export
 report_glmer_effect <- function(mod, param) {
   parameter_stats <- mod %>%
     tidy(effects = "fixed") %>%
@@ -18,6 +21,7 @@ report_glmer_effect <- function(mod, param) {
           p_value)
 }
 
+#' @import dplyr
 report_lmerTest_effect <- function(mod, param) {
   parameter_stats <- summary(mod)$coefficients[param, ] %>% as.data.frame
   estimate <- parameter_stats["Estimate", ]
@@ -35,4 +39,13 @@ report_lmerTest_effect <- function(mod, param) {
           lwr,
           upr,
           p_value)
+}
+
+#' @import dplyr
+add_sig_stars <- function(frame) {
+  frame %>% mutate(
+    sig = ifelse(p.value > 0.05, "",
+                 ifelse(p.value > 0.01, "*",
+                        ifelse(p.value > 0.001, "**",
+                               "***"))))
 }

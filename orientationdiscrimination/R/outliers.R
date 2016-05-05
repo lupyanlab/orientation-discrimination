@@ -1,7 +1,9 @@
+library(dplyr)
 library(tidyr)
 
-# return x's that are not in y's
-# usage: filter(my_data, subj_id %nin% outliers)
+#' return x's that are not in y's
+#' usage: filter(my_data, subj_id %nin% outliers)
+#' @export
 "%nin%" <- function(x, y) {
   !(x %in% y)
 }
