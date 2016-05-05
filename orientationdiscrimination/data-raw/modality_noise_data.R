@@ -3,8 +3,8 @@
 
 devtools::load_all()
 
-modality_noise <- compile("data-raw/modality-noise/data", key = "ODM",
-                          headername = "_header.txt")
+modality_noise <- compile("data-raw/modality-noise/data", regex_key = "ODM",
+                          header_file = "_header.txt")
 
 # Remove practice trials
 # ----------------------

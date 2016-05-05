@@ -3,8 +3,8 @@
 
 devtools::load_all()
 
-dualmask <- compile("data-raw/dualmask/data", key = "MWP2",
-                     headername = "_header.txt")
+dualmask <- compile("data-raw/dualmask/data", regex_key = "MWP2",
+                     header_file = "_header.txt")
 
 # Remove practice trials
 # ----------------------

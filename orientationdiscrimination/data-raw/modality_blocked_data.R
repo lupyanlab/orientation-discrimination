@@ -3,8 +3,8 @@
 
 devtools::load_all()
 
-modality_blocked <- compile("data-raw/modality-blocked/data", key = "ODM",
-                            headername = "_header.txt")
+modality_blocked <- compile("data-raw/modality-blocked/data", regex_key = "ODM",
+                            header_file = "_header.txt")
 
 # Remove practice trials
 # ----------------------
