@@ -1,0 +1,256 @@
+subj_id,seed,date,computer,block,block_type,trial,cue,cue_type,mask_type,response_type,target,target_loc,correct_response,keys_pressed,response,rt,is_correct
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,1,bee,invalid,nomask,pic,bottle,left,left,,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,2,camel,invalid,nomask,pic,strawberry,right,right,up left,left,1209.58596747,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,3,raccoon,valid,mask,pic,raccoon,left,left,left,left,587.577421218,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,4,snowman,invalid,mask,word,gorilla,right,down,,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,5,gorilla,invalid,nomask,pic,saltshaker,right,right,right,right,1014.70608031,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,6,heart,valid,mask,pic,heart,left,left,left,left,1223.51455595,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,7,chicken,valid,nomask,pic,chicken,left,left,left,left,782.280940097,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,8,alligator,invalid,nomask,pic,leopard,left,left,down,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,9,tomato,valid,nomask,pic,tomato,right,right,right,right,834.049901459,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,10,rhinoceros,valid,nomask,pic,rhinoceros,left,left,left,left,514.818750322,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,11,mouse,invalid,nomask,pic,tree,right,right,right,right,742.532849312,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,-1,practice,12,swan,valid,mask,word,swan,right,up,right,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,14,heart,valid,mask,word,heart,right,up,right up,up,1172.83421103,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,15,rabbit,invalid,mask,pic,giraffe,left,left,left,left,718.507434241,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,16,elephant,valid,nomask,pic,elephant,right,right,right,right,604.131684173,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,17,grasshopper,valid,nomask,pic,grasshopper,right,right,right,right,659.594129771,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,18,lion,valid,mask,pic,lion,right,right,right,right,527.404573746,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,19,tomato,valid,mask,pic,tomato,right,right,right,right,412.552854512,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,20,giraffe,invalid,mask,word,snowman,right,down,down,down,957.439943682,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,21,swan,valid,mask,pic,swan,left,left,left,left,742.077684961,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,22,mouse,valid,mask,pic,mouse,right,right,right,right,520.886000711,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,23,camel,valid,nomask,pic,camel,left,left,left,left,691.042043269,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,24,snowman,valid,mask,pic,snowman,left,left,up left,left,751.441832166,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,25,skunk,valid,mask,pic,skunk,right,right,left,left,828.15229753,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,26,rhinoceros,valid,nomask,word,rhinoceros,right,up,right,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,27,penguin,valid,mask,pic,penguin,right,right,right,right,626.604676712,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,28,giraffe,valid,nomask,pic,giraffe,right,right,right,right,722.362882923,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,29,tree,valid,nomask,word,tree,left,up,left left,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,30,pig,valid,mask,pic,pig,left,left,left,left,649.77897983,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,31,rabbit,valid,nomask,pic,rabbit,left,left,left,left,694.901333191,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,32,pig,valid,nomask,word,pig,right,up,right down,down,1236.34364549,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,33,swan,invalid,nomask,pic,strawberry,right,right,left,left,829.061024822,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,34,elephant,valid,mask,pic,elephant,right,right,right,right,797.863739077,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,35,lion,valid,mask,pic,lion,left,left,left,left,727.614551317,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,36,pig,valid,mask,pic,pig,left,left,left,left,648.243522272,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,37,mouse,valid,nomask,pic,mouse,left,left,left,left,795.177568216,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,38,wine_glass,invalid,mask,pic,rhinoceros,left,left,left,left,467.930157203,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,39,penguin,invalid,nomask,pic,kangaroo,right,right,right,right,676.67141417,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,40,table,invalid,nomask,pic,saltshaker,right,right,right,right,766.269865446,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,41,giraffe,valid,mask,pic,giraffe,right,right,right,right,513.855928555,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,42,chicken,valid,nomask,word,chicken,right,up,right up,up,989.970392082,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,43,chair,valid,mask,word,chair,right,up,right up,up,902.941280045,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,44,table,valid,mask,word,table,left,up,up,up,890.491813887,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,45,leopard,valid,mask,pic,leopard,left,left,left,left,786.286510061,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,46,raccoon,invalid,nomask,pic,snowman,left,left,left,left,693.031704519,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,47,swan,valid,nomask,pic,swan,left,left,left,left,508.715970907,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,48,alligator,valid,nomask,pic,alligator,right,right,left,left,473.586415406,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,49,wine_glass,valid,nomask,pic,wine_glass,left,left,left,left,572.211961728,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,50,alligator,valid,mask,word,alligator,left,up,left up,up,794.115519617,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,51,donkey,valid,mask,pic,donkey,right,right,left,left,695.795336273,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,52,gorilla,invalid,mask,pic,snowman,right,right,right,right,733.739417046,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,53,giraffe,valid,nomask,word,giraffe,left,up,up,up,951.394138858,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,54,grasshopper,invalid,nomask,word,camel,right,down,left up,up,979.824592359,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,55,elephant,valid,mask,pic,elephant,right,right,up down right,right,1334.85876163,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,56,chair,valid,nomask,word,chair,right,up,up,up,675.521661993,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,57,pig,valid,mask,pic,pig,right,right,right,right,726.394699421,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,58,rabbit,valid,mask,pic,rabbit,left,left,left,left,950.226781424,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,59,tomato,valid,nomask,pic,tomato,right,right,right,right,644.992718007,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,60,camel,invalid,mask,pic,dog,right,right,right,right,705.248147715,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,61,chicken,valid,mask,word,chicken,right,up,right up,up,1207.49771968,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,62,camel,valid,nomask,word,camel,left,up,up,up,753.292575479,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,63,alligator,valid,nomask,pic,alligator,right,right,right,right,673.054110724,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,64,pig,valid,nomask,pic,pig,right,right,right,right,816.757517867,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,65,table,valid,mask,word,table,left,up,up,up,761.574188247,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,66,wine_glass,invalid,mask,pic,dog,right,right,right,right,640.219259541,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,67,pear,valid,nomask,pic,pear,right,right,right,right,716.041163076,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,68,kangaroo,valid,mask,word,kangaroo,left,up,up,up,1060.78165257,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,69,rhinoceros,valid,nomask,pic,rhinoceros,right,right,right,right,608.60426072,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,70,chicken,valid,nomask,pic,chicken,right,right,up right,right,823.389402125,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,71,saltshaker,valid,mask,pic,saltshaker,left,left,,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,72,alligator,valid,mask,pic,alligator,left,left,left,left,825.857913587,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,73,bee,invalid,nomask,pic,bottle,left,left,left,left,779.224108905,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,0,test,74,strawberry,valid,mask,pic,strawberry,right,right,left,left,552.119776607,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,76,elephant,valid,mask,pic,elephant,left,left,left,left,734.582846519,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,77,bottle,valid,mask,pic,bottle,right,right,right,right,744.331418071,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,78,leopard,invalid,mask,pic,penguin,left,left,right,right,979.151449166,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,79,tomato,valid,nomask,pic,tomato,left,left,left,left,709.781540558,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,80,raccoon,valid,nomask,word,raccoon,left,up,up,up,1296.62052076,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,81,camel,valid,nomask,pic,camel,right,right,right,right,554.419281892,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,82,swan,valid,nomask,pic,swan,left,left,left,left,592.222204432,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,83,pear,valid,mask,word,pear,right,up,right up,up,828.964038286,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,84,zebra,valid,nomask,word,zebra,left,up,up,up,694.001568481,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,85,chair,valid,nomask,pic,chair,right,right,right,right,633.471504319,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,86,rabbit,invalid,mask,pic,chicken,left,left,left,left,600.285837892,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,87,tomato,valid,nomask,pic,tomato,left,left,left,left,586.999663617,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,88,camel,valid,nomask,pic,camel,right,right,right,right,638.812477235,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,89,gorilla,valid,nomask,pic,gorilla,left,left,left,left,745.527263265,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,90,elephant,valid,nomask,pic,elephant,left,left,right,right,745.324648451,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,91,chicken,valid,nomask,pic,chicken,right,right,right,right,583.031224553,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,92,strawberry,invalid,mask,pic,alligator,left,left,left,left,626.870668959,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,93,gorilla,valid,mask,pic,gorilla,right,right,right,right,728.601379786,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,94,pineapple,valid,mask,word,pineapple,right,up,up,up,679.349583108,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,95,mouse,valid,nomask,pic,mouse,right,right,up right,right,777.116335463,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,96,alligator,valid,nomask,word,alligator,right,up,up,up,574.938463047,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,97,penguin,valid,nomask,pic,penguin,right,right,up right,right,859.686954878,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,98,giraffe,valid,mask,pic,giraffe,right,right,right,right,633.430853486,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,99,chair,valid,mask,pic,chair,right,right,right,right,519.237872679,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,100,pig,valid,mask,word,pig,left,up,up,up,720.990349073,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,101,grasshopper,valid,mask,pic,grasshopper,left,left,left,left,1073.73973727,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,102,gorilla,valid,nomask,pic,gorilla,right,right,right,right,551.496887114,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,103,zebra,valid,nomask,pic,zebra,right,right,right,right,512.27469882,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,104,elephant,valid,mask,word,elephant,right,up,up,up,877.164988779,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,105,heart,valid,mask,pic,heart,left,left,left,left,717.84677403,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,106,saltshaker,valid,nomask,pic,saltshaker,left,left,left,left,784.576605074,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,107,wine_glass,valid,nomask,pic,wine_glass,left,left,left,left,759.338700213,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,108,strawberry,valid,mask,pic,strawberry,left,left,left,left,1218.10572455,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,109,heart,valid,mask,pic,heart,right,right,right,right,714.470815845,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,110,wine_glass,valid,mask,pic,wine_glass,left,left,left,left,777.623353526,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,111,bee,invalid,mask,word,strawberry,right,down,right up,up,1132.32271187,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,112,swan,valid,mask,word,swan,right,up,up,up,828.070035204,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,113,alligator,valid,nomask,pic,alligator,left,left,left,left,698.899860494,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,114,pear,valid,nomask,pic,pear,left,left,left,left,740.004801657,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,115,bottle,valid,nomask,pic,bottle,left,left,left,left,695.430437103,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,116,alligator,invalid,nomask,word,pineapple,right,down,down,down,894.186899066,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,117,rhinoceros,invalid,nomask,pic,donkey,right,right,right,right,741.941967979,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,118,swan,valid,mask,pic,swan,left,left,left,left,606.561784633,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,119,alligator,valid,mask,pic,alligator,left,left,left,left,590.440919623,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,120,gorilla,valid,mask,pic,gorilla,left,left,left,left,689.230990596,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,121,deer,valid,nomask,pic,deer,left,left,left,left,1068.97716178,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,122,saltshaker,valid,nomask,pic,saltshaker,left,left,left,left,772.750668228,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,123,zebra,valid,mask,pic,zebra,left,left,left,left,629.494102672,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,124,penguin,valid,nomask,pic,penguin,left,left,left,left,584.200822283,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,125,chicken,valid,mask,pic,chicken,left,left,left,left,562.032552902,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,126,tomato,valid,nomask,pic,tomato,right,right,right,right,789.103596006,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,127,strawberry,valid,mask,pic,strawberry,right,right,left,left,777.510042768,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,128,mouse,invalid,nomask,pic,wine_glass,right,right,right,right,889.307171572,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,129,skunk,valid,nomask,pic,skunk,right,right,right,right,803.078597412,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,130,pear,invalid,mask,pic,leopard,left,left,left,left,679.801546037,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,131,rhinoceros,invalid,mask,word,table,right,down,down,down,865.657858551,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,132,dog,invalid,mask,word,mouse,left,down,down,down,1030.3176865,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,133,bee,valid,nomask,word,bee,left,up,up,up,733.071715571,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,134,saltshaker,valid,nomask,word,saltshaker,right,up,up,up,667.862938717,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,135,pear,valid,mask,word,pear,right,up,up,up,654.720483813,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,1,test,136,chicken,valid,mask,pic,chicken,right,right,right,right,821.465358604,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,138,skunk,valid,mask,word,skunk,right,up,up,up,727.547332644,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,139,wine_glass,invalid,nomask,pic,heart,left,left,left,left,801.307235379,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,140,tiger,valid,nomask,pic,tiger,right,right,right,right,629.087591544,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,141,tree,valid,nomask,pic,tree,left,left,left,left,616.850343533,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,142,chicken,valid,nomask,pic,chicken,left,left,left,left,551.638365258,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,143,bottle,valid,mask,pic,bottle,left,left,left,left,434.379271232,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,144,piano,valid,mask,pic,piano,right,right,right,right,731.115343515,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,145,raccoon,valid,mask,pic,raccoon,right,right,right,right,542.895187158,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,146,penguin,invalid,mask,pic,kangaroo,right,right,right,right,568.683961872,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,147,tomato,valid,mask,word,tomato,left,up,up,up,857.460749336,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,148,dog,valid,mask,pic,dog,right,right,right,right,524.221628439,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,149,raccoon,valid,nomask,pic,raccoon,left,left,left,left,903.966518585,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,150,alligator,valid,mask,word,alligator,right,up,up,up,628.760142718,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,151,piano,valid,nomask,pic,piano,left,left,left,left,727.545092348,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,152,camel,invalid,mask,pic,grasshopper,right,right,right,right,634.297329001,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,153,bee,invalid,mask,pic,chair,right,right,right,right,622.035113629,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,154,tomato,valid,mask,word,tomato,right,up,up,up,712.914872915,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,155,tiger,invalid,nomask,pic,chair,right,right,right,right,828.45894061,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,156,kangaroo,valid,nomask,pic,kangaroo,left,left,right,right,580.000319984,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,157,mouse,valid,mask,pic,mouse,right,right,right,right,1126.09285722,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,158,tiger,invalid,mask,pic,giraffe,right,right,right,right,770.882959943,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,159,mouse,valid,mask,pic,mouse,left,left,left,left,710.652177222,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,160,tree,valid,nomask,pic,tree,left,left,left,left,678.434133995,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,161,pig,valid,mask,pic,pig,right,right,right,right,1012.09641062,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,162,rhinoceros,valid,nomask,pic,rhinoceros,right,right,right,right,653.73365581,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,163,elephant,invalid,mask,pic,apple,right,right,right,right,841.508250218,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,164,rabbit,valid,mask,pic,rabbit,right,right,right,right,609.471376054,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,165,tiger,valid,mask,pic,tiger,right,right,right,right,478.254885413,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,166,wine_glass,invalid,nomask,pic,grasshopper,left,left,right,right,862.009186763,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,167,camel,valid,mask,pic,camel,left,left,left,left,761.711825617,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,168,heart,valid,mask,pic,heart,right,right,right,right,738.538802601,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,169,rhinoceros,valid,nomask,word,rhinoceros,left,up,up,up,666.298993398,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,170,swan,invalid,mask,pic,raccoon,right,right,right,right,571.021878161,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,171,wine_glass,valid,nomask,word,wine_glass,right,up,right up,up,860.708992928,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,172,chicken,valid,mask,word,chicken,right,up,right up,up,1363.44925826,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,173,chair,valid,mask,pic,chair,right,right,right,right,720.780052245,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,174,tree,invalid,mask,pic,deer,left,left,left,left,732.128099073,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,175,raccoon,invalid,mask,pic,grasshopper,right,right,right,right,951.829777565,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,176,apple,invalid,mask,word,skunk,right,down,down,down,965.585519094,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,177,strawberry,invalid,nomask,pic,pear,right,right,right,right,729.368948378,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,178,piano,valid,nomask,word,piano,right,up,up,up,593.099243008,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,179,tomato,valid,nomask,pic,tomato,left,left,left,left,683.925227728,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,180,lion,invalid,nomask,word,giraffe,left,down,down,down,974.471776281,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,181,tree,valid,nomask,word,tree,left,up,up,up,490.460765548,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,182,rabbit,valid,nomask,pic,rabbit,right,right,right,right,808.048909064,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,183,lion,valid,mask,pic,lion,left,left,left,left,725.923531223,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,184,raccoon,valid,nomask,word,raccoon,left,up,up,up,1144.14512739,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,185,leopard,valid,nomask,pic,leopard,left,left,left,left,867.526207119,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,186,skunk,valid,nomask,pic,skunk,left,left,left,left,780.275594909,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,187,zebra,valid,nomask,word,zebra,right,up,up,up,612.96288576,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,188,donkey,valid,mask,pic,donkey,right,right,right,right,635.397148319,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,189,alligator,invalid,nomask,pic,wine_glass,right,right,right,right,913.538082037,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,190,gorilla,valid,mask,pic,gorilla,left,left,left,left,551.313797012,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,191,wine_glass,valid,mask,word,wine_glass,right,up,right up,up,776.125345845,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,192,mouse,invalid,mask,pic,dog,right,right,right,right,1427.81716632,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,193,giraffe,invalid,nomask,pic,tiger,right,right,up right,right,1115.63433241,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,194,zebra,valid,nomask,pic,zebra,left,left,left,left,932.364962995,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,195,table,valid,mask,word,table,right,up,up,up,639.076869003,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,2,test,196,pig,valid,mask,pic,pig,right,right,left,left,809.852920007,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,198,donkey,valid,mask,pic,donkey,left,left,left,left,737.059039995,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,199,chair,invalid,nomask,pic,tree,left,left,left,left,636.805851012,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,200,kangaroo,invalid,mask,pic,skunk,left,left,left,left,589.562281035,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,201,saltshaker,valid,mask,word,saltshaker,right,up,up,up,607.275899034,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,202,rabbit,valid,mask,pic,rabbit,left,left,left,left,543.107405305,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,203,kangaroo,valid,mask,pic,kangaroo,right,right,right,right,782.749867998,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,204,penguin,valid,mask,pic,penguin,right,right,right,right,648.664757144,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,205,pear,valid,nomask,pic,pear,right,right,right,right,581.357168965,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,206,deer,valid,mask,word,deer,right,up,up,up,768.90290156,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,207,dog,valid,nomask,pic,dog,left,left,left,left,868.906742427,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,208,zebra,valid,nomask,word,zebra,right,up,up,up,740.692988504,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,209,kangaroo,valid,mask,pic,kangaroo,right,right,right,right,755.482931156,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,210,tomato,valid,mask,pic,tomato,left,left,up left,left,1094.22466904,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,211,giraffe,valid,nomask,word,giraffe,right,up,up,up,703.93707091,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,212,piano,valid,mask,pic,piano,right,right,right,right,578.003617004,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,213,penguin,invalid,mask,pic,wine_glass,right,right,right,right,603.50911459,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,214,pear,valid,nomask,pic,pear,right,right,right,right,744.290447328,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,215,tree,invalid,nomask,word,alligator,right,down,down,down,848.030984402,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,216,rabbit,valid,mask,pic,rabbit,left,left,left,left,829.685514327,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,217,deer,valid,mask,pic,deer,right,right,right,right,618.626186159,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,218,chair,invalid,mask,pic,lion,right,right,right,right,599.333578721,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,219,chair,invalid,mask,pic,wine_glass,right,right,right,right,946.101179346,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,220,tomato,invalid,nomask,word,lion,right,down,down,down,817.914952524,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,221,giraffe,valid,nomask,pic,giraffe,right,right,right,right,640.632812399,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,222,tree,invalid,nomask,word,zebra,left,down,down,down,855.283516925,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,223,rabbit,valid,mask,pic,rabbit,left,left,left,left,658.158859238,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,224,piano,valid,mask,pic,piano,right,right,right,right,892.947521526,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,225,swan,valid,mask,pic,swan,left,left,left,left,629.676552024,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,226,rhinoceros,invalid,mask,pic,donkey,left,left,left,left,623.428772669,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,227,pig,valid,nomask,pic,pig,right,right,right,right,792.182193603,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,228,zebra,valid,nomask,word,zebra,left,up,left up,up,848.927868064,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,229,piano,valid,nomask,word,piano,right,up,up,up,632.154985797,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,230,grasshopper,valid,nomask,pic,grasshopper,left,left,left,left,1056.2853897,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,231,tomato,invalid,nomask,word,apple,right,down,up,up,826.294512022,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,232,pear,valid,nomask,pic,pear,left,left,left,left,782.02583082,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,233,giraffe,invalid,mask,pic,camel,left,left,left,left,1031.77440306,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,234,donkey,valid,nomask,pic,donkey,right,right,right,right,528.39876432,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,235,chair,invalid,nomask,word,raccoon,left,down,down,down,908.358753193,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,236,piano,valid,mask,pic,piano,left,left,left,left,851.05516715,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,237,bottle,valid,mask,pic,bottle,right,right,right,right,763.760062866,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,238,zebra,valid,nomask,pic,zebra,left,left,left,left,604.625258129,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,239,chair,valid,nomask,word,chair,right,up,up,up,855.418913998,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,240,chicken,valid,nomask,pic,chicken,left,left,left,left,686.212250032,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,241,chair,valid,nomask,pic,chair,left,left,left,left,690.909207333,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,242,deer,valid,mask,pic,deer,left,left,left,left,446.703263558,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,243,chicken,valid,mask,pic,chicken,right,right,up,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,244,bottle,valid,nomask,word,bottle,right,up,up,up,815.989949275,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,245,donkey,valid,nomask,pic,donkey,right,right,right,right,696.816093754,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,246,snowman,invalid,nomask,pic,lion,right,right,right,right,785.547108855,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,247,alligator,valid,mask,word,alligator,right,up,up,up,660.772050265,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,248,bottle,valid,mask,pic,bottle,right,right,up right,right,996.061008424,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,249,penguin,valid,nomask,pic,penguin,right,right,right,right,504.864363,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,250,kangaroo,valid,nomask,pic,kangaroo,right,right,right,right,1119.66326833,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,251,bottle,invalid,nomask,pic,apple,left,left,left,left,912.366243545,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,252,pineapple,valid,mask,word,pineapple,left,up,left up,up,1111.13454867,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,253,mouse,valid,nomask,pic,mouse,left,left,left,left,794.086391572,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,254,heart,valid,mask,pic,heart,right,right,right,right,563.631707802,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,255,apple,valid,mask,pic,apple,right,right,right,right,779.442088213,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,256,tree,valid,nomask,pic,tree,right,right,right,right,570.221980102,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,257,rabbit,valid,nomask,word,rabbit,right,up,right,timeout,1500.0,0
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,258,chicken,valid,mask,pic,chicken,right,right,up right,right,807.07040336,1
+MOW301,301,2015_Nov_24_1343,LL-Kramer,3,test,259,snowman,valid,mask,pic,snowman,right,right,right,right,728.263687808,1

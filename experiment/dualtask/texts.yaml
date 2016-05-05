@@ -1,0 +1,88 @@
+instructions:
+  1:
+    main: >
+      Welcome to the MWP Experiment! Press the SPACEBAR to begin.
+  2:
+    tag: donkey
+    top: >
+      Today your job is to identify which picture (left or right) is oriented
+      correctly in the normal, upright position. For example, you might see the
+      two pictures below. They are exactly the same image, except that one of
+      them is flipped 180 degrees so that it is upside down, and the other is
+      not flipped. Your job is to pick the one that is *not flipped*, and press
+      the key for that picture. If the upright picture is on the left, you will
+      press the left arrow. If it's on the right, press the right arrow. Press
+      the correct key for the images below to continue.
+  3:
+    tag: cue
+    top: >
+      Before you see the pictures, you will hear a word through the headphones.
+      Please put the headphones on now. Press the SPACEBAR to hear a word,
+      and then you will see two new pictures. Respond to the pictures
+      using the arrow keys.
+  4:
+    tag: word
+    top: >
+      Sometimes the word you hear will not match the pictures you see, but your
+      task is exactly the same: determine which picture is correctly oriented.
+      You need to pay attention to the word you hear because on some trials
+      instead of seeing pictures you will see a word printed in one of the frames
+      instead of pictures. On these trials, you should respond which word was
+      the same as the one you heard through the headphones. If it's the same
+      word, press the *up arrow*. If it's a different word, press the *down arrow*.
+      Press the SPACEBAR to see one of these trials.
+  5:
+    main: >
+      Please note that if you see a single word instead of two pictures, the
+      location of the word doesn't matter, and therefore you can't respond
+      using the left or right arrow keys. Remember to use the up and down
+      arrow keys for these trials.
+
+
+      If you accidentally press the left or right arrow keys on the word trials,
+      nothing will happen. You must press the up or down arrow keys to continue.
+  6:
+    tag: mask
+    top: >
+      As you perform this task, please stare at the center of the screen
+      directly at the "+" and respond based on what you see with your peripheral
+      vision. On some trials you will see flashing colorful patterns as shown
+      below. Keep looking at the "+" even when the patterns are flashing. You
+      will now start with some practice trials. If you have any questions about
+      the task, ask the experimenter now. When you are ready to begin, press the
+      SPACEBAR.
+practice: >
+  You've completed the practice trials. Do you have any questions? If so, now
+  is the time to ask the experimenter.
+
+
+  The next trials will be harder because you will not receive any feedback on
+  your performance. Please do your best to respond as quickly and accurately
+  as possible.
+test: >
+  You've finished a part of the experiment. Take a break, but please stay in
+  the room. When you are ready to continue, press the SPACEBAR.
+timeout: >
+  You ran out of time! Take a quick break if you need to. When you are ready to
+  continue, press the SPACEBAR.
+wrong_keys: >
+  It looks like you used the wrong keys to respond. As a reminder:
+
+
+  If you see pictures, use the left or right arrow to indicate which picture is
+  upright.
+
+
+  If you see a word, respond with the up arrow if the word is the same as the
+  one you heard, or press the down arrow if it's a different word (regardless of
+  which side it's on).
+
+
+  Press the SPACEBAR to resume the experiment.
+end: >
+  You have finished the experiment. All that's left is a short survey. After
+  you exit this screen by pressing the SPACEBAR, a survey should open in your
+  browser window.
+
+
+  Thank you for making our research possible!

@@ -3,8 +3,8 @@
 
 devtools::load_all()
 
-modality <- compile("data-raw/modality/data", key = "ODM",
-                    headername = "_header.txt")
+modality <- compile("data-raw/modality/data", regex_key = "ODM",
+                    header_file = "_header.txt")
 
 # Remove practice trials
 # ----------------------

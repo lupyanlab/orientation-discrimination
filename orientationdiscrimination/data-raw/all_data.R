@@ -4,6 +4,10 @@ source("data-raw/temporal_data.R")
 source("data-raw/modality_data.R")
 source("data-raw/modality_noise_data.R")
 source("data-raw/modality_blocked_data.R")
+source("data-raw/dualtask.R")
+
+make_unilateral(TRUE)
+make_bilateral(TRUE)
 
 dualmask$exp <- "dualmask"
 temporal$exp <- "temporal"

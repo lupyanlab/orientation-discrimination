@@ -3,8 +3,8 @@
 
 devtools::load_all()
 
-temporal <- compile("data-raw/temporal/data", key = "MWP5",
-                    headername = "_header.txt")
+temporal <- compile("data-raw/temporal/data", regex_key = "MWP5",
+                    header_file = "_header.txt")
 
 # Remove practice trials
 # ----------------------
