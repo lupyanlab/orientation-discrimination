@@ -163,8 +163,13 @@ ggplot(error_types, aes(x = response_type, y = error_rate, fill = error_type, or
 
 # Overall ----------------------------------------------------------------------
 
+# ---- cueing-effect-mod
+cue_mod <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
+                data = filter(unilateral, response_type == "pic", mask_type == "nomask"))
+tidy(cue_mod, effects = "fixed")
+
 # ---- pic-mod
-pic_mod <- lmer(rt ~ cue_c * mask_c + (1|subj_id),
+pic_mod <- lmerTest::lmer(rt ~ cue_c * mask_c + (1|subj_id),
                 data = filter(unilateral, response_type == "pic"))
 tidy(pic_mod, effects = "fixed")
 
@@ -176,7 +181,7 @@ tidy(pic_error_mod, effects = "fixed") %>%
   add_sig_stars
 
 # ---- word-mod
-word_mod <- lmer(rt ~ mask_c + cue_c + (1|subj_id),
+word_mod <- lmerTest::lmer(rt ~ mask_c + cue_c + (1|subj_id),
                  data = filter(unilateral, response_type == "word"))
 tidy(word_mod, effects = "fixed")
 

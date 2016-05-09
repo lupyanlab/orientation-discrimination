@@ -25,14 +25,11 @@ report_glmer_effect <- function(mod, param) {
 report_lmerTest_effect <- function(mod, param) {
   parameter_stats <- summary(mod)$coefficients[param, ] %>% as.data.frame
   estimate <- parameter_stats["Estimate", ]
-  p_value <- parameter_stats["Pr(>|t|)", ]
-
+  p_value <- parameter_stats[5, ]
+  
   interval <- confint(mod)[param, ]
   lwr <- interval[1]
   upr <- interval[2]
-
-  print("here!")
-  print(p_value)
 
   sprintf("%.2f ms., 95%% CI [%.2f, %.2f], p = %.4f",
           estimate,

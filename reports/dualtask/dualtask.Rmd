@@ -1,5 +1,5 @@
 ---
-title: "Experiment 2C: Visual interference disrupts verbal cueing of visual recognition but not word repetition detection"
+title: "Experiment 1C: Visual interference disrupts verbal cueing of visual recognition but not word repetition detection"
 author: "Pierce Edmiston"
 date: "`r Sys.Date()`"
 output:
@@ -8,15 +8,7 @@ output:
     toc: true
 ---
 
-We conducted Experiment 2C to rule out the possibility that visual interference
-disrupts task performance in general, regardless of the specificity of the
-visual interference effects. In this experiment we had participants perform
-a dual task. On some trials participants completed the same upright picture
-detection task as performed in Experiments 2A and 2B. On other trials 
-participants performed a word repetition task which does not require the
-visual knowledge. We expected visual interference to again disrupt the
-verbal cueing effect observed in Experiments 2A and 2B, but not to
-have an effect on word repetition detection.
+We conducted Experiment 1C to rule out the possibility that visual interference disrupts task performance in general, regardless of the specificity of the visual interference effects. In this experiment we had participants perform a dual task. On some trials participants completed the same upright picture detection task as performed in Experiments 2A and 2B. On other trials  participants performed a word repetition task which does not require the visual knowledge. We expected visual interference to again disrupt the verbal cueing effect observed in Experiments 2A and 2B, but not to have an effect on word repetition detection.
 
 ```{r, echo = FALSE, message = FALSE}
 library(knitr)
