@@ -3,24 +3,29 @@ library(dplyr)
 library(tidyr)
 
 library(lme4)
+library(AICcmodavg)
 library(broom)
 
 library(ggplot2)
+library(gridExtra)
 
+# ---- data
 library(orientationdiscrimination)
 data(unilateral)
 
+# ---- theme
 scale_x_mask <- ggplot2::scale_x_continuous("", breaks = c(-0.5, 0.5),
-                                            labels = c("No mask", "Mask"))
+                                            labels = c("Blank screen", "Visual interference"))
+scale_alpha_mask <- scale_alpha_manual(values = c(0.4, 0.9))
+
+colors <- RColorBrewer::brewer.pal(3, "Set2")
+names(colors) <- c("blue", "orange", "green")
 
 scale_y_rt <- ggplot2::scale_y_continuous("Reaction Time")
 scale_y_error <- ggplot2::scale_y_continuous("Error Rate", labels = scales::percent)
 
 cue_colors <- list(invalid = "#d7191c", valid = "#a6d96a")
-scale_color_cue_type <- ggplot2::scale_color_manual("",
-                                                    labels = c("Invalid", "Valid"),
-                                                    values = unlist(cue_colors))
-
+scale_color_cue_type <- scale_color_manual("", labels = c("Invalid", "Valid"), values = unlist(cue_colors))
 cue_task_colors <- c(cue_colors, list(word = "gray"))
 scale_color_cue_task <- ggplot2::scale_color_manual(
   "",
@@ -28,140 +33,14 @@ scale_color_cue_task <- ggplot2::scale_color_manual(
   values = unlist(cue_task_colors)
 )
 
-base_theme <- ggplot2::theme_minimal() +
+base_theme <- theme_minimal() +
   ggplot2::theme(
     axis.ticks = ggplot2::element_blank(),
-    panel.margin = grid::unit(2, "lines")
+    panel.margin = grid::unit(2, "lines"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
   )
 
-# Version 1 --------------------------------------------------------------------
-
-# ---- v1-pic-mod
-v1_pic_mod <- lmer(rt ~ cue_c * mask_c + (1|subj_id),
-                   data = filter(unilateral, version == 1, response_type == "pic"))
-tidy(v1_pic_mod, effects = "fixed")
-
-# ---- v1-pic-error-mod
-v1_pic_error_mod <- glmer(is_error ~ cue_c * mask_c + (1|subj_id),
-                          data = filter(unilateral, version == 1, response_type == "pic"),
-                          family = binomial)
-tidy(v1_pic_error_mod, effects = "fixed") %>%
-  add_sig_stars
-
-# ---- v1-word-mod
-v1_word_mod <- lmer(rt ~ mask_c + cue_c + (1|subj_id),
-                    data = filter(unilateral, version == 1, response_type == "word"))
-tidy(v1_word_mod, effects = "fixed")
-
-# ---- v1-word-error-mod
-v1_word_error_mod <- glmer(is_error ~ mask_c + cue_c + (1|subj_id),
-                           data = filter(unilateral, version == 1, response_type == "word"),
-                           family = binomial)
-tidy(v1_word_error_mod, effects = "fixed")
-
-# ---- v1-plot
-ggplot(filter(unilateral, version == 1),
-       aes(x = mask_c, y = rt, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
-  scale_x_mask +
-  scale_y_rt +
-  scale_color_cue_task +
-  base_theme +
-  ggtitle("V1: Effect of mask on RTs")
-
-# ---- v1-error-plot
-ggplot(filter(unilateral, version == 1),
-       aes(x = mask_c, y = is_error, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
-  scale_x_mask +
-  scale_y_error +
-  scale_color_cue_task +
-  base_theme +
-  ggtitle("V1: Effect of mask on errors")
-
-# ---- v1-error-type-plot
-error_types <- unilateral %>%
-  filter(version == 1) %>%
-  group_by(response_type) %>%
-  summarize(
-    wrong_type = sum(error_type == "wrong_type", na.rm = TRUE)/n(),
-    wrong_key = sum(error_type == "wrong_key", na.rm = TRUE)/n()
-  ) %>%
-  gather(error_type, error_rate, -response_type)
-
-ggplot(error_types, aes(x = response_type, y = error_rate, fill = error_type, order = rev(error_type))) +
-  geom_bar(stat = "identity") +
-  scale_y_error +
-  base_theme
-
-# Version 2 --------------------------------------------------------------------
-
-# ---- v2-pic-mod
-v2_pic_mod <- lmer(rt ~ cue_c * mask_c + (1|subj_id),
-                   data = filter(unilateral, version == 2, response_type == "pic"))
-tidy(v2_pic_mod, effects = "fixed")
-
-# ---- v2-pic-error-mod
-v2_pic_error_mod <- glmer(is_error ~ cue_c * mask_c + (1|subj_id),
-                          data = filter(unilateral, version == 2, response_type == "pic"),
-                          family = binomial)
-tidy(v2_pic_error_mod, effects = "fixed")
-
-# ---- v2-word-mod
-v2_word_mod <- lmer(rt ~ mask_c + cue_c + (1|subj_id),
-                    data = filter(unilateral, version == 2, response_type == "word"))
-tidy(v2_word_mod, effects = "fixed")
-
-# ---- v2-word-error-mod
-v2_word_error_mod <- glmer(is_error ~ mask_c + cue_c + (1|subj_id),
-                           data = filter(unilateral, version == 2, response_type == "word"),
-                           family = binomial)
-tidy(v2_word_error_mod, effects = "fixed")
-
-# ---- v2-plot
-ggplot(filter(unilateral, version == 2),
-       aes(x = mask_c, y = rt, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
-  scale_x_mask +
-  scale_y_rt +
-  scale_color_cue_task +
-  base_theme +
-  ggtitle("V2: Effect of mask on RTs")
-
-# ---- v2-error-plot
-ggplot(filter(unilateral, version == 2),
-       aes(x = mask_c, y = is_error, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
-  scale_x_mask +
-  scale_y_error +
-  scale_color_cue_task +
-  base_theme +
-  ggtitle("V2: Effect of mask on errors")
-
-# ---- v2-error-type-plot
-error_types <- unilateral %>%
-  filter(version == 2) %>%
-  group_by(response_type) %>%
-  summarize(
-    wrong_type = sum(error_type == "wrong_type", na.rm = TRUE)/n(),
-    wrong_key = sum(error_type == "wrong_key", na.rm = TRUE)/n()
-  ) %>%
-  gather(error_type, error_rate, -response_type)
-
-ggplot(error_types, aes(x = response_type, y = error_rate, fill = error_type, order = rev(error_type))) +
-  geom_bar(stat = "identity") +
-  scale_y_error +
-  base_theme
-
-# Overall ----------------------------------------------------------------------
 
 # ---- cueing-effect-mod
 cue_mod <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
@@ -181,7 +60,7 @@ tidy(pic_error_mod, effects = "fixed") %>%
   add_sig_stars
 
 # ---- word-mod
-word_mod <- lmerTest::lmer(rt ~ mask_c + cue_c + (1|subj_id),
+word_mod <- lmer(rt ~ mask_c + cue_c + (1|subj_id),
                  data = filter(unilateral, response_type == "word"))
 tidy(word_mod, effects = "fixed")
 
@@ -192,27 +71,60 @@ word_error_mod <- glmer(is_error ~ mask_c + cue_c + (1|subj_id),
 tidy(word_error_mod, effects = "fixed") %>%
   add_sig_stars
 
-# ---- overall-plot
-ggplot(unilateral, aes(x = mask_c, y = rt, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
-  scale_x_mask +
-  scale_y_rt +
-  scale_color_cue_task +
-  base_theme +
-  ggtitle("Effect of mask on RTs")
+# ---- plot-preds
+get_cue_mod_preds <- function(mod) {
+  tidy(mod, effects = "fixed") %>%
+    filter(term == "cue_c")
+}
 
-# ---- overall-error-plot
-ggplot(unilateral, aes(x = mask_c, y = is_error, color = cue_task)) +
-  geom_point(stat = "summary", fun.y = "mean") +
-  geom_line(stat = "summary", fun.y = "mean") +
-  facet_wrap("response_label") +
+get_cueing_effects <- function() {
+  pic_trials <- filter(unilateral, response_type == "pic")
+  
+  f <- formula(rt ~ cue_c + (1|subj_id))
+  nomask <- lmer(f, data = filter(pic_trials, mask_type == "nomask"))
+  mask <- lmer(f, data = filter(pic_trials, mask_type == "mask"))
+  
+  nomask_preds <- get_cue_mod_preds(nomask) %>% mutate(mask_c = -0.5)
+  mask_preds <- get_cue_mod_preds(mask) %>% mutate(mask_c = 0.5)
+  rbind(nomask_preds, mask_preds) %>% mutate(estimate = -estimate)
+}
+
+get_word_mod_preds <- function(mod) {
+  x_preds <- expand.grid(mask_c = c(-0.5, 0.5), cue_c = 0.0)
+  y_preds <- predictSE(mod, x_preds, se = TRUE)
+  cbind(x_preds, y_preds)
+}
+
+cueing_effects <- get_cueing_effects() %>% mutate(trial_type = "pic")
+word_error_preds <- get_word_mod_preds(word_mod) %>% mutate(trial_type = "word")
+
+
+# ---- rt-plot
+base_plot <- ggplot(mapping = aes(x = mask_c, alpha = factor(mask_c))) +
   scale_x_mask +
-  scale_y_error +
-  scale_color_cue_task +
+  scale_alpha_mask +
   base_theme +
-  ggtitle("Effect of mask on errors")
+  theme(legend.position = "none")
+
+pic_trials_plot <- base_plot +
+  geom_bar(aes(y = estimate), data = cueing_effects, stat = "identity",
+           width = 1.0, fill = colors[["blue"]]) +
+  geom_linerange(aes(y = estimate, ymin = estimate-std.error, ymax = estimate+std.error),
+                 data = cueing_effects, stat = "identity") +
+  scale_y_continuous("Cueing effect (ms)", breaks = seq(0, 100, by = 20)) +
+  coord_cartesian(ylim = c(0, 94)) +
+  ggtitle("Cueing effect")
+
+word_trials_plot <- base_plot +
+  geom_bar(aes(y = fit), data = word_error_preds, stat = "identity",
+           width = 1.0, fill = colors[["green"]]) +
+  geom_linerange(aes(y = fit, ymin = fit-se.fit, ymax = fit+se.fit),
+                 data = word_error_preds) +
+  scale_y_continuous("Reaction time (ms)") +
+  coord_cartesian(ylim = c(650, 949)) +
+  ggtitle("Word repetition")
+
+grid.arrange(pic_trials_plot, word_trials_plot, nrow = 1)
 
 # ---- mask-correlation-plot
 cue_mask_coefs <- unilateral %>%

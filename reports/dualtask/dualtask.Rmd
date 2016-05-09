@@ -26,6 +26,12 @@ read_chunk("unilateral.R")
 ```{r, setup}
 ```
 
+```{r, data}
+```
+
+```{r, theme}
+```
+
 # Methods
 
 ## Participants
@@ -60,10 +66,13 @@ baseline, noise cues that were presented in Experiments 2A and 2B.
 
 # Results
 
-```{r, overall-plot}
+```{r, word-mod}
 ```
 
-```{r, overall-error-plot}
+```{r, plot-preds}
+```
+
+```{r, rt-plot}
 ```
 
 ## Effect of mask on cueing upright picture detection (replication)
