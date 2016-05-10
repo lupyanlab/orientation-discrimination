@@ -19,7 +19,7 @@ scale_x_mask <- ggplot2::scale_x_continuous("", breaks = c(-0.5, 0.5),
 scale_alpha_mask <- scale_alpha_manual(values = c(0.4, 0.9))
 
 colors <- RColorBrewer::brewer.pal(3, "Set2")
-names(colors) <- c("blue", "orange", "green")
+names(colors) <- c("green", "orange", "blue")
 
 scale_y_rt <- ggplot2::scale_y_continuous("Reaction Time")
 scale_y_error <- ggplot2::scale_y_continuous("Error Rate", labels = scales::percent)
@@ -48,7 +48,7 @@ cue_mod <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
 tidy(cue_mod, effects = "fixed")
 
 # ---- pic-mod
-pic_mod <- lmerTest::lmer(rt ~ cue_c * mask_c + (1|subj_id),
+pic_mod <- lmer(rt ~ cue_c * mask_c + (1|subj_id),
                 data = filter(unilateral, response_type == "pic"))
 tidy(pic_mod, effects = "fixed")
 
@@ -89,15 +89,41 @@ get_cueing_effects <- function() {
   rbind(nomask_preds, mask_preds) %>% mutate(estimate = -estimate)
 }
 
+get_cue_mod_preds <- function(mod) {
+  x_preds <- expand.grid(mask_c = c(-0.5, 0.5), cue_c = c(-0.5, 0.5))
+  y_preds <- predictSE(mod, x_preds, se = TRUE)
+  cbind(x_preds, y_preds)
+}
+
+format_cueing_effect <- function(preds) {
+  list(
+    error = preds,
+    box = format_box(preds)
+  )
+}
+
+format_box <- function(preds) {
+  bar_width = 0.2
+  preds %>%
+    group_by(mask_c) %>%
+    summarize(
+      ymin = min(fit),
+      ymax = max(fit)
+    ) %>%
+    mutate(
+      xmin = mask_c - bar_width,
+      xmax = mask_c + bar_width
+    )
+}
+
 get_word_mod_preds <- function(mod) {
   x_preds <- expand.grid(mask_c = c(-0.5, 0.5), cue_c = 0.0)
   y_preds <- predictSE(mod, x_preds, se = TRUE)
   cbind(x_preds, y_preds)
 }
 
-cueing_effects <- get_cueing_effects() %>% mutate(trial_type = "pic")
-word_error_preds <- get_word_mod_preds(word_mod) %>% mutate(trial_type = "word")
-
+cueing_effects <- get_cue_mod_preds(pic_mod) %>% format_cueing_effect
+word_error_preds <- get_word_mod_preds(word_mod)
 
 # ---- rt-plot
 base_plot <- ggplot(mapping = aes(x = mask_c, alpha = factor(mask_c))) +
@@ -107,13 +133,18 @@ base_plot <- ggplot(mapping = aes(x = mask_c, alpha = factor(mask_c))) +
   theme(legend.position = "none")
 
 pic_trials_plot <- base_plot +
-  geom_bar(aes(y = estimate), data = cueing_effects, stat = "identity",
-           width = 1.0, fill = colors[["blue"]]) +
-  geom_linerange(aes(y = estimate, ymin = estimate-std.error, ymax = estimate+std.error),
-                 data = cueing_effects, stat = "identity") +
-  scale_y_continuous("Cueing effect (ms)", breaks = seq(0, 100, by = 20)) +
-  coord_cartesian(ylim = c(0, 94)) +
-  ggtitle("Cueing effect")
+  geom_rect(aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax),
+            fill=colors[["blue"]], data = cueing_effects$box) +
+  geom_point(aes(y = fit, shape = factor(cue_c)), data = cueing_effects$error,
+             size = 4.0) +
+  geom_errorbar(aes(ymin = fit-se.fit, ymax = fit+se.fit), data = cueing_effects$error,
+                width = 0.4) +
+  scale_y_continuous("Reaction time (ms)") +
+  scale_shape_manual("", labels = c("Invalid cue", "Valid cue"), values = c(1, 16)) +
+  coord_cartesian(ylim = c(600, 750)) +
+  ggtitle("Cueing effect") +
+  guides(alpha = "none") +
+  theme(legend.position = "top")
 
 word_trials_plot <- base_plot +
   geom_bar(aes(y = fit), data = word_error_preds, stat = "identity",
@@ -121,7 +152,7 @@ word_trials_plot <- base_plot +
   geom_linerange(aes(y = fit, ymin = fit-se.fit, ymax = fit+se.fit),
                  data = word_error_preds) +
   scale_y_continuous("Reaction time (ms)") +
-  coord_cartesian(ylim = c(650, 949)) +
+  coord_cartesian(ylim = c(750, 900)) +
   ggtitle("Word repetition")
 
 grid.arrange(pic_trials_plot, word_trials_plot, nrow = 1)

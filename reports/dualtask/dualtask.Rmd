@@ -66,6 +66,9 @@ baseline, noise cues that were presented in Experiments 2A and 2B.
 
 # Results
 
+```{r, pic-mod}
+```
+
 ```{r, word-mod}
 ```
 
