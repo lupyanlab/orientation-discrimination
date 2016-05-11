@@ -1,5 +1,5 @@
-devtools::load_all("orientationdiscrimination")
-data(dualmask)
+library(orientationdiscrimination)
+data("dualmask")
 
 library(lme4)
 library(dplyr)
@@ -26,7 +26,7 @@ error_mod <- glmer(is_error ~ mask_c * (cue_l + cue_q) + (1|subj_id),
                    family = binomial, data = dualmask)
 summary(error_mod)
 report_glmer_effect(error_mod, "mask_c:cue_l")
-# -0.59 log-odds, 95% CI [-1.39, 0.20], p = 0.1389
+# -0.59 log-odds, 95% CI [-1.39, 0.20], z = -1.5, p = 0.1389
 
 
 # Effect of mask on noise cue trials
@@ -35,7 +35,7 @@ error_mod_noise <- glmer(is_error ~ mask_c + (1|subj_id),
                          family = binomial, data = dualmask_noise)
 summary(error_mod_noise)
 report_glmer_effect(error_mod_noise, "mask_c")
-# -0.07 log-odds, 95% CI [-0.42, 0.29], p = 0.7136
+# -0.07 log-odds, 95% CI [-0.42, 0.29], z = -0.367, p = 0.7136
 
 # Effect of mask on invalid cue trials
 dualmask_invalid <- filter(dualmask, cue_type == "invalid")
@@ -43,7 +43,7 @@ error_mod_invalid <- glmer(is_error ~ mask_c + (1|subj_id),
                          family = binomial, data = dualmask_invalid)
 summary(error_mod_invalid)
 report_glmer_effect(error_mod_invalid, "mask_c")
-# -0.11 log-odds, 95% CI [-0.80, 0.56], p = 0.7405
+# -0.11 log-odds, 95% CI [-0.80, 0.56], z = −0.331, p = 0.7405
 
 
 # Effect of mask on valid cue trials
@@ -52,4 +52,4 @@ error_mod_valid <- glmer(is_error ~ mask_c + (1|subj_id),
                          family = binomial, data = dualmask_valid)
 summary(error_mod_valid)
 report_glmer_effect(error_mod_valid, "mask_c")
-# 0.48 log-odds, 95% CI [0.07, 0.90], p = 0.0228
+# 0.48 log-odds, 95% CI [0.07, 0.90], z = 2.3, p = 0.0228
