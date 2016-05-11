@@ -66,6 +66,9 @@ baseline, noise cues that were presented in Experiments 2A and 2B.
 
 # Results
 
+```{r, cueing-effect-mod}
+```
+
 ```{r, pic-mod}
 ```
 
@@ -80,8 +83,8 @@ baseline, noise cues that were presented in Experiments 2A and 2B.
 
 ## Effect of mask on cueing upright picture detection (replication)
 
-In a replication of Experiments 2A and 2B, we observed a cueing effect on the
-trials without any visual interfence, [stats]. Visual interference reduced
+In a replication of Experiments 1A and 1B, we observed a cueing effect on the
+trials without any visual interfence. Visual interference reduced
 this cueing effect by X%, [stats].
 
 ```{r, pic-mod, echo = 1}

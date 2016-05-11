@@ -46,11 +46,16 @@ base_theme <- theme_minimal() +
 cue_mod <- lmerTest::lmer(rt ~ cue_c + (1|subj_id),
                 data = filter(unilateral, response_type == "pic", mask_type == "nomask"))
 tidy(cue_mod, effects = "fixed")
+report_lmerTest_effect(cue_mod, "cue_c")
 
 # ---- pic-mod
 pic_mod <- lmer(rt ~ cue_c * mask_c + (1|subj_id),
                 data = filter(unilateral, response_type == "pic"))
 tidy(pic_mod, effects = "fixed")
+
+pic_mod_stats <- lmerTest::lmer(rt ~ cue_c * mask_c + (1|subj_id),
+                                data = filter(unilateral, response_type == "pic"))
+report_lmerTest_effect(pic_mod_stats, "cue_c:mask_c")
 
 # ---- pic-error-mod
 pic_error_mod <- glmer(is_error ~ cue_c * mask_c + (1|subj_id),
@@ -64,12 +69,18 @@ word_mod <- lmer(rt ~ mask_c + cue_c + (1|subj_id),
                  data = filter(unilateral, response_type == "word"))
 tidy(word_mod, effects = "fixed")
 
+word_mod_stats <- lmerTest::lmer(rt ~ mask_c + cue_c + (1|subj_id),
+                                 data = filter(unilateral, response_type == "word"))
+report_lmerTest_effect(word_mod_stats, "mask_c")
+
 # ---- word-error-mod
 word_error_mod <- glmer(is_error ~ mask_c + cue_c + (1|subj_id),
                         data = filter(unilateral, response_type == "word"),
                         family = binomial)
 tidy(word_error_mod, effects = "fixed") %>%
   add_sig_stars
+
+report_glmer_effect(word_error_mod, "mask_c")
 
 # ---- plot-preds
 get_cue_mod_preds <- function(mod) {
