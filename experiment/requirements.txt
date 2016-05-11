@@ -1,0 +1,9 @@
+numpy==1.9.2
+pandas==0.16.2
+PsychoPy==1.82.1
+pytest==2.8.5
+scipy==0.15.1
+Unipath==1.1
+invoke==0.12.0
+oauth2client==2.0.0
+gspread==0.3.0
