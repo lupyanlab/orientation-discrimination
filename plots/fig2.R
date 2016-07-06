@@ -38,3 +38,9 @@ grid.arrange(dualmask_trial_structure, temporal_trial_structure,
              labeled_gg, temporal_gg,
              nrow = 2)
 dev.off()
+
+pdf("plots/fig2.pdf")
+grid.arrange(dualmask_trial_structure, temporal_trial_structure,
+             labeled_gg, temporal_gg,
+             nrow = 2)
+dev.off()

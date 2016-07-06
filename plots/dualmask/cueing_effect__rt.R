@@ -18,6 +18,7 @@ values <- values %>% mutate(mask_c = ifelse(mask_c < 0, mask_c + squish, mask_c 
 # - requires xmin, xmax, ymin, ymax, and a grouping column (mask_type)
 
 source("plots/magnets.R")
+y_lim <- default_y_lim
 
 library(reshape2)
 library(purrr)  # go functional programming!!

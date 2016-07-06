@@ -1,4 +1,6 @@
 library(ggplot2)
+library(extrafont)
+loadfonts()
 
 #' Turn a single row with columns for invalid, noise, and valid
 #' into a data.frame with two rows, one for the valid priming
@@ -49,13 +51,14 @@ magnet_plot <- function(preds, rects, error, x_breaks, y_lim = default_y_lim) {
       labels = c("Blank screen", "Visual interference")) +
     scale_y_continuous("Reaction Time (ms)", breaks = seq(y_lim[1], y_lim[2], by = 25)) +
     coord_cartesian(ylim = y_lim, xlim = x_lim) +
-    theme_bw(base_size = 10) +
+    theme_minimal(base_size = 10) +
     theme(
+      text = element_text("Arial"),
       legend.position = "none",
       axis.ticks.x = element_blank(),
       axis.title.x = element_text(hjust = 0.82, size = 6),
       axis.line = element_line(color = "black"),
-      panel.grid.major = element_blank(),
+      panel.grid.major.x = element_blank(),
       panel.grid.minor = element_blank(),
       panel.border = element_blank(),
       panel.background = element_blank(),
