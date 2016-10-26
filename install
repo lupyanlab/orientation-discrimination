@@ -1,0 +1,5 @@
+#!/usr/bin/env Rscript
+pkg_name <- "orientationdiscrimination"
+library(devtools)
+document(pkg_name)
+install(pkg_name)

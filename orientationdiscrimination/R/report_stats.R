@@ -1,5 +1,3 @@
-library(broom)
-
 #' @import dplyr
 #' @import broom
 #' @export
@@ -24,6 +22,7 @@ report_glmer_effect <- function(mod, param) {
 }
 
 #' @import dplyr
+#' @export
 report_lmerTest_effect <- function(mod, param) {
   parameter_stats <- lmerTest::summary(mod)$coefficients %>% as.data.frame %>% .[param, ]
   estimate <- parameter_stats[["Estimate"]]
@@ -43,6 +42,7 @@ report_lmerTest_effect <- function(mod, param) {
 }
 
 #' @import dplyr
+#' @export
 add_sig_stars <- function(frame) {
   frame %>% mutate(
     sig = ifelse(p.value > 0.05, "",

@@ -1,6 +1,3 @@
-library(dplyr)
-library(tidyr)
-
 #' return x's that are not in y's
 #' usage: filter(my_data, subj_id %nin% outliers)
 #' @export
@@ -8,15 +5,21 @@ library(tidyr)
   !(x %in% y)
 }
 
-dualmask_outliers <- c("MWP205a")
+#' @import dplyr
+#' @export
+label_outliers <- function(frame) {
+  dualmask_outliers <- c("MWP205a")
+  temporal_outliers <- c(
+    "MWP502",  # incomplete data
+    "MWP524",
+    "MWP518"
+  )
+  outliers <- c(dualmask_outliers, temporal_outliers)
+  frame %>%
+    mutate(is_subj_outlier = ifelse(subj_id %in% outliers, 1, 0))
+}
 
-temporal_outliers <- c(
-  "MWP502",  # incomplete data
-  "MWP524",
-  "MWP518"
-)
-
-post_survey_strategies <- data_frame(
+post_survey_strategies <- dplyr::data_frame(
   ODM309 = "one-side",
   ODM310 = "one-side",
   ODM312 = "one-side",
@@ -54,4 +57,6 @@ post_survey_strategies <- data_frame(
   ODM345 = NA,
   ODM344a = "central",
   ODM346 = "central"
-) %>% gather(subj_id, strategy)
+)
+
+post_survey_strategies <- tidyr::gather(post_survey_strategies, subj_id, strategy)
